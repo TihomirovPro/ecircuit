@@ -1,6 +1,274 @@
 @import "../../styles/vars"
 @import "../../styles/mixins"
+
+.page-title
+  margin-bottom: 26px
+
+//---------------__main__-----------------//
+
+.main
+  position: relative
+  padding-top: 214px
+  padding-bottom: 310px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/mainBg.png)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position-x: right
+    width: 1354px 
+    height: 861px
+    top: -100px
+  &__container
+    max-width: 524px
+  &__subtitle
+    margin-bottom: 22px
+    font-size: 14px
+    max-width: 456px
+  &__scroll-icon
+    position: absolute
+    width: 29px
+    // left: $wrapper
+    bottom: 124px
   
-.indexPage
-  
+//---------------__work__-----------------//
+
+.work
+  position: relative
+  z-index: 1
+  padding-bottom: 116px
+  &__container
+    +flex('between-wrap')
+
+.workCard
+  max-width: 250px
+  padding: 34px 26px
+  background: #fff
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  border-radius: 6px
+  &__num
+    +flex('center')
+    +size(53px)
+    font-size: 20px
+    font-weight: 600
+    border-radius: 50%
+    color: #fff
+    margin: 0 auto 26px
+    background: linear-gradient(136.42deg, rgba(11, 200, 166, 0.39) 0%, rgba(76, 221, 116, 0.41) 96.35%), #fff
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  &__title
+    position: relative
+    font-size: 16px
+    font-weight: bold
+    text-align: center
+    margin-bottom: 22px
+    padding-bottom: 10px
+    +before(90px,1px,$colorMain)
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+  &__text
+    text-align: center
+
+//---------------__category__-----------------//
+
+.category
+  position: relative
+  padding-bottom: 96px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/categoryBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position-x: center
+    +size(100%,800px)
+    left: 50%
+    transform: translateX(-50%)
+    top: -300px
+  &__container
+    position: relative
+    z-index: 1
+    padding: 76px 0
+    +flex('between')
+    background: #FFFFFF
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+
+.categoryCard
+  position: relative
+  text-align: center
+  padding: 0 44px
+  &:not(:last-child)
+    +before(1px,86px,rgba(198, 198, 198, 0.56))
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+  &__icon
+    +size(35px)
+    margin: 0 auto
+    margin-bottom: 16px
+  &__title
+    font-size: 16px
+    font-weight: 600
+
+//---------------__fresh__-----------------//
+
+.fresh
+  position: relative
+  z-index: 1
+  padding-bottom: 120px
+  &__container
+    +flex('between-wrap')
+    margin-bottom: 116px
+  &__signup
+    display: flex
+    height: 322px
+  &__question
+    +flex('center')
+    font-size: 28px
+    color: #fff
+    padding: 0 75px
+    text-align: center
+    font-weight: 600
+    +size(49%,100%)
+    background-image: url(../img/greenBg.svg)
+    background-size: cover
+    background-position: center
+    border-radius: 6px 0px 0px 6px
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  &__answer
+    +flex('center')
+    +size(51%,100%)
+    text-align: center
+    border-radius: 0px 6px 6px 0px
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  &__text
+    font-size: 22px
+    max-width: 340px
+    margin: 0 auto 20px
+
+.freshCard
+  position: relative
+  overflow: hidden
+  max-width: 536px
+  background: #FFFFFF
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  border-radius: 6px
+  margin-bottom: 36px
+  padding: 26px 55px 80px
+  &__status
+    color: $colorMain
+    text-transform: uppercase
+    margin-bottom: 20px
+  &__icon
+    width: 13px
+    margin-right: 6px
+    vertical-align: middle
+    >span
+      vertical-align: middle
+  &__title
+    font-size: 18px
+    font-weight: 600
+    margin-bottom: 10px
+  &__price
+  &__offers
+    +flex('between')
+    padding: 18px 55px
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: 0
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    background: #E7E6E6
+
+//---------------__provider__-----------------//
+
+.provider
+  padding-bottom: 115px
+
+//---------------__accaunt__-----------------//
+
+.accaunt
+  padding-bottom: 134px
+  &__cards
+    display: flex
+    overflow: hidden
+    border-radius: 6px
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    margin-bottom: 130px
+  &__card
+    padding-top: 70px
+    padding-bottom: 70px
+    padding-right: 38px
+    width: 50%
+    &_customer
+      background: url(../img/accaunt1.png)
+      background-size: contain
+      background-repeat: no-repeat
+    &_provider
+      background: url(../img/accaunt2.png)
+      background-size: contain
+      background-repeat: no-repeat
+  &__card-desc
+    max-width: 310px
+    margin-left: auto
+  &__card-title
+    margin-bottom: 36px
+  &__icon
+    width: 76px
+    display: block
+    margin: 0 auto 36px
+  &__text
+    font-size: 16px
+    text-align: center
+    max-width: 740px
+    margin: 0 auto
+
+//---------------__faq__-----------------//
+
+.faq
+  position: relative
+  height: 560px
+  padding-bottom: 120px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/faqBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position-x: center
+    +size(100%,560px)
+    left: 50%
+    transform: translateX(-50%)
+  &__container
+    position: relative
+    z-index: 1
+    overflow: hidden
+    max-width: 980px
+    margin: 0 auto
+  &__list
+  &__item
+    display: block
+    max-width: 313px
+    min-width: 294px
+    background: #fff
+    text-align: center
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+    padding: 35px
+  &__title
+    position: relative
+    font-size: 16px
+    font-weight: 600
+    padding-bottom: 10px
+    margin-bottom: 16px
+    +before(114px,1px,$colorMain)
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+  &__text
+    
+
 @import "./*/*"
