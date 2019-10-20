@@ -1,5 +1,14 @@
 .menu
-  color: $white
+  position: relative
+  width: 420px
+  top: 7px
   &__list
+    +flex('between')
+    width: 100%
   &__item
   &__link
+    font-weight: 600
+    color: $colorText
+    transition: .3s
+    &:hover
+      color: $colorMain
