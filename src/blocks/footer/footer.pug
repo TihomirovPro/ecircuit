@@ -1,2 +1,33 @@
+mixin list(title,...items)
+  div
+    p!=title
+      ul
+        each item in items
+          li
+            a(href='#')!=item
+
 mixin footer()
-  +b.FOOTER.footer
+  +b.FOOTER.footer.wrapper
+    +e.top
+      div
+        +e.IMG.logo(src='img/logo.png' alt='')
+        p Тендеры по промышленной электронике
+        p ООО «Есеркет Рус»
+      +list('Информация','О платформе','Обратная связь','Наши новости','СМИ о нас')
+      +list('Заказчикам','Регистрация','Список поставщиков','FAQ')
+      +list('Поставщикам','Регистрация','Открытые тендеры','Платные опции')
+    +e.bottom
+      div
+        p © 2019 Ecircuit. Все права защищены.
+      div
+        div
+          p support@ecircuit.co
+          p Политика конфиденциальности
+        div
+          p +7 (499) 450-57-37
+          p Пользовательское соглашение
+        div
+          a(href='#') F
+          a(href='#') VK
+
+
