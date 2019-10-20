@@ -1,2 +1,29 @@
 .header
-
+  display: flex
+  align-items: center
+  height: 68px
+  width: 100%
+  position: fixed
+  background: rgba(255,255,255,0)
+  transition: .3s
+  z-index: 100
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0)
+  &_bg
+    background: rgba(255,255,255,1)
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  &__logo
+    width: 118px
+    margin-right: 46px
+  &__buttons
+    margin-left: auto
+  &__login
+    display: inline-block
+    margin-right: 30px
+    color: $colorMain
+    font-weight: 600
+    >span
+      vertical-align: middle
+  &__login-icon
+    vertical-align: middle
+    margin-left: 8px
+    +size(12px,13px)
