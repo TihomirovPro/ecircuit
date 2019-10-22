@@ -1,10 +1,85 @@
 .footer
+  position: relative
   &__top
-    +flex('between')
     border-bottom: 1px solid #C4C4C4
     padding-bottom: 30px
+    +tablet(min)
+      +flex('between')
+    +mobile
+      padding-bottom: 0
+    p
+      max-width: 260px
+      &:not(:last-child)
+        margin-bottom: 20px
+  &__title
+    +tablet(max)
+      padding-bottom: 28px
   &__logo
     width: 126px
-  
+    margin-bottom: 24px
+  &__links
+    width: 590px
+    +flex('between-wrap')
+    +tablet(max)
+      width: 100%
+      padding-top: 28px
+      border-top: 1px solid #C4C4C4
+  &__wrap
+    width: 590px
+    +flex('between')
+    +tablet(max)
+      width: auto
   &__bottom
     +flex('between')
+    padding-top: 36px
+    padding-bottom: 50px
+  
+  &__list
+    +mobile
+      width: 50%
+      margin-bottom: 40px
+  
+  &__list-title
+    font-size: 16px
+    font-weight: bold
+    color: #6A6A6A
+    margin-bottom: 24px
+    transition: .3s
+  &__list-item
+    &:not(:last-child)
+      margin-bottom: 4px
+  &__list-link
+    display: block
+    &:hover
+      color: $colorMain
+
+  &__link
+    display: block
+    transition: .3s
+    max-width: 190px
+    margin-bottom: 6px
+    &:hover
+      color: $colorMain
+
+  &__icon
+    height: 24px
+    >path
+      transition: .3s
+      fill: #818080
+
+  &__social-link
+    display: inline-block
+    &:first-child
+      margin-right: 20px
+    &:hover
+      .footer__icon
+        >path
+          fill: $colorMain
+  &__policy
+    +tablet(max)
+      display: none
+  &__social
+    +tablet(max)
+      position: absolute
+      top: 97px
+      right: 40px
