@@ -9,7 +9,7 @@
 
 .wrapper
   padding: 0 $wrapper
-  +tablet
+  +media(max, 1224px)
     padding: 0 $paddingTab
   +mobile
     padding: 0 $paddingMob
@@ -25,9 +25,11 @@
   overflow: hidden
 
 .page-title
-  font-size: 32px
+  font-size: 40px
   font-weight: bold
   color: #6A6A6A
+  +mobile
+    font-size: 28px
 
 .section-title
   font-size: 28px
@@ -37,3 +39,5 @@
   color: #6A6A6A
   position: relative
   z-index: 1
+  +tablet(max)
+    text-align: left

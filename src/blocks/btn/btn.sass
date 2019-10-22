@@ -1,13 +1,20 @@
 .btn
 	display: inline-block
+	position: relative
 	color: $white
 	padding: 11px 16px
 	font-weight: 600
-	background-color: $colorMain
 	transition: .3s
 	border-radius: 6px
 	text-align: center
+	overflow: hidden
+	background-color: $colorMain
+	+before(100%,100%,(linear-gradient(223.8deg, rgba(11, 200, 166, 0.39) 4.45%, rgba(16, 187, 64, 0.45) 84.48%), #FFFFFF))
+		z-index: -1
+		left: 0
+		bottom: 0
 	&:hover
+		background-color: transparent
 	&:active
 
 .btn_big
@@ -16,5 +23,51 @@
 .btn_full
 	width: 100%
 	padding: 20px
-	background: #E7E6E6
+	background-color: #E7E6E6
 	color: #6A6A6A
+	box-shadow: 0px 4px 20px rgba(198, 198, 198, 0)
+	&::before
+		content: none
+	&:hover
+		box-shadow: 0px 4px 20px rgba(198, 198, 198, 0.4)
+		background-color: #E7E6E6
+
+// ---------- Burger ---------- //
+
+.burger
+	position: relative
+	display: none
+	z-index: 101
+	+size(36px)
+	+tablet(max)
+		+flex('center')
+		&.active
+			.burger
+				&__icon
+					background: transparent
+					&:before,
+					&:after
+						top: 0
+						width: 24px
+						transform: rotate(45deg)
+						transition-delay: .2s, 0s
+					&:before
+						transform: rotate(-45deg)
+	&__icon
+		display: block
+		position: relative
+		+size(16px, 4px)
+		border-radius: 6px
+		background: #818080
+		transition: background 0s .2s
+		+beforeAfter(22px, 4px, #818080)
+			border-radius: 6px
+			left: 0
+			top: 8px
+			transition-property: transform, top
+			transition-duration: .2s, .2s
+			transition-delay: 0s, .2s
+		&:before
+			width: 18px
+			top: -8px
+		

@@ -82,6 +82,20 @@
   font-style: normal;
 }
 
+//--------------------------------------------------------------------------//
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-LightIt.eot');
+  src: local('../fonts/Proxima Nova Light Italic'), local('../fonts/ProximaNova-LightIt'),
+    url('../fonts/ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNova-LightIt.woff2') format('woff2'),
+    url('../fonts/ProximaNova-LightIt.woff') format('woff'),
+    url('../fonts/ProximaNova-LightIt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
 // @font-face {
 //   font-family: 'Proxima Nova Lt';
 //   src: url('../fonts/ProximaNova-SemiboldIt.eot');
@@ -156,16 +170,3 @@
 //   font-style: italic;
 // }
 
-
-
-// @font-face {
-//   font-family: 'Proxima Nova Lt';
-//   src: url('../fonts/ProximaNova-LightIt.eot');
-//   src: local('../fonts/Proxima Nova Light Italic'), local('../fonts/ProximaNova-LightIt'),
-//     url('../fonts/ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
-//     url('../fonts/ProximaNova-LightIt.woff2') format('woff2'),
-//     url('../fonts/ProximaNova-LightIt.woff') format('woff'),
-//     url('../fonts/ProximaNova-LightIt.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: italic;
-// }
