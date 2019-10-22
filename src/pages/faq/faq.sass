@@ -1,0 +1,162 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+body
+  background: linear-gradient(142.52deg, rgba(169, 242, 189, 0.17) -0.41%, rgba(255, 255, 255, 0) 45.05%), #F6F9F7
+
+.page-title
+  text-align: center
+  margin-bottom: 54px
+
+//---------------__main__-----------------//
+  
+.main
+  position: relative
+  padding-top: 214px
+  padding-bottom: 100px
+  &::before
+    position: absolute
+    content: ''
+    width: 100%
+    height: 491px
+    top: 0
+    left: 0
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    background-image: url(../img/faq-page-Bg.svg)
+  &__title
+    position: relative
+    z-index: 1
+
+.search
+  +flex('between')
+  margin: 0 auto
+  max-width: 616px
+  width: 100%
+  &__input
+    text-indent: 28px
+    width: 80%
+    height: 62px
+    background: #fff
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+    +placeholder
+      font-weight: 300
+      font-style: italic
+      color: #ACACAC
+  &__btn
+    +flex('center')
+    +size(86px,62px)
+    +mobile
+      +size(66px,62px)
+  &__icon
+    +size(18px)
+
+//---------------__select__-----------------//
+
+.select
+  margin-bottom: 56px
+
+  &__title
+    text-align: center
+    font-weight: 600
+    margin-bottom: 42px
+    font-size: 24px
+
+  &__cards
+    +flex('between')
+
+  &__card
+    cursor: pointer
+    +flex('center')
+    font-size: 18px
+    font-weight: bold
+    width: calc(50% - 25px)
+    height: 194px
+    background: #fff
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+    transition: .3s
+    +tablet(max)
+      width: calc(50% - 15px)
+    &:hover
+      background: url(../img/greenBg.svg)
+      background-size: cover
+      color: #fff
+
+//---------------__faq__-----------------//
+
+.faqs
+  padding-bottom: 100px
+  +tablet(min)
+    +flex('between')
+    flex-direction: row-reverse
+    
+  &__nav
+    width: 28%
+    +tablet(max)
+      +flex('between-wrap')
+      width: 100%
+      margin-bottom: 90px
+    +mobile
+      margin-bottom: 60px
+
+  &__link
+    font-size: 16px
+    font-weight: bold
+    text-align: center
+    +flex('center')
+    height: 170px
+    transition: .3s
+    margin-bottom: 20px
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+    +tablet
+      width: 33%
+    +mobile
+      width: calc(50% - 6px)
+    &:hover,
+    &.active
+      color: #fff
+      background: linear-gradient(212.61deg, rgba(0, 180, 147, 0.39) -0.32%, rgba(16, 187, 64, 0.41) 80.5%)
+
+  &__container
+    width: calc(72% - 80px)
+    +tablet(max)
+      width: 100%
+  &__tab
+    display: none
+    &.active
+      display: block
+
+.faq
+  transition: .3s
+  height: 75px
+  overflow: hidden
+  cursor: pointer
+  position: relative
+  background: #FFFFFF
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  border-radius: 6px
+  margin-bottom: 20px
+  padding: 34px 50px 0 50px
+  &.open
+    .faq__icon
+      transform: rotate(180deg)
+  &__title
+    font-size: 18px
+    font-weight: 600
+    margin-bottom: 24px
+  &__text
+    padding-bottom: 42px
+  &__icon
+    transition: .3s
+    position: absolute
+    +size(17px,9px)
+    right: 34px
+    top: 38px
+    transform: rotate(0deg)
+
+
+@import "./*/*"
