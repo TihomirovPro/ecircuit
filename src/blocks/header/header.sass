@@ -8,22 +8,52 @@
   transition: .3s
   z-index: 100
   box-shadow: 0px 4px 25px rgba(198, 198, 198, 0)
+  +tablet(max)
+    justify-content: space-between
   &_bg
     background: rgba(255,255,255,1)
     box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
   &__logo
     width: 118px
-    margin-right: 46px
+    +tablet(min)
+      margin-right: 46px
   &__buttons
-    margin-left: auto
+    display: flex
+    align-items: center
+    +tablet(min)
+      margin-left: auto
   &__login
+    position: relative
     display: inline-block
-    margin-right: 30px
+    overflow: hidden
     color: $colorMain
     font-weight: 600
+    +tablet(min)
+      margin-right: 30px
+    +tablet(max)
+      padding: 11px 18px
+      transition: .3s
+      border-radius: 6px
+      background-color: $colorMain
+      +before(100%,100%,(linear-gradient(223.8deg, rgba(11, 200, 166, 0.39) 4.45%, rgba(16, 187, 64, 0.45) 84.48%), #FFFFFF))
+        z-index: -1
+        left: 0
+        bottom: 0
+      &:hover
+        background-color: transparent
     >span
       vertical-align: middle
+      +tablet(max)
+        display: none
   &__login-icon
     vertical-align: middle
     margin-left: 8px
     +size(12px,13px)
+    +tablet(max)
+      +size(15px)
+      margin-left: 0
+      >path
+        stroke: #fff !important
+  &__signup
+    +tablet(max)
+      display: none
