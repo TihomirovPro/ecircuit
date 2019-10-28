@@ -8,21 +8,29 @@
 
 //===================_Desktop_====================//
   
-$desktopMin: 1200px
+$desktopLgMax: 1920px
+$desktopLgMin: 1201px
 
-=desktop($val: min)
-  +media($val, $bp-desktop-min)
-    @content
+=desktopLg($from: $desktopLgMax, $to: $desktopLgMin)
+  @if $from == max or $from == min
+    +media($from, $desktLgSmMax)
+      @content
+  @else
+    +media($from, $to)
+      @content
 
 //===================_Desktop-sm_====================//
 
-$desktopSmMax: 1050px
-$desktopSmMid: 1024px
-$desktopSmMin: 992px
+$desktopMdStart: 1201px
+$desktopMdMax: 1200px
+$desktopMdMin: 991px
 
-=desktopSm($from: $desktopSmMax, $to: $desktopSmMin)
-  @if $from == max or $from == min
-    +media($from, $desktopSmMax)
+=desktopMd($from: $desktopMdMax, $to: $desktopMdMin)
+  @if $from == max
+    +media($from, $desktopMdMax)
+      @content
+  @elseif $from == min
+    +media($from, $desktopMdStart)
       @content
   @else
     +media($from, $to)
@@ -30,12 +38,16 @@ $desktopSmMin: 992px
 
 //===================_Tablet_====================//
 
-$tabletMax: 991px
+$tabletStart: 991px
+$tabletMax: 990px
 $tabletMin: 768px
 
 =tablet($from: $tabletMax, $to: $tabletMin)
-  @if $from == max or $from == min
+  @if $from == max
     +media($from, $tabletMax)
+      @content
+  @elseif $from == min
+    +media($from, $tabletStart)
       @content
   @else
     +media($from, $to)
@@ -135,7 +147,7 @@ $mobileMin: 374px
     content: ''
     position: absolute
     +size($a, $b)
-    background-color: $bg 
+    background: $bg 
     @content
 
 =bgImg($img, $size, $position)

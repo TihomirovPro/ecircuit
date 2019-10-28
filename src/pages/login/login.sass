@@ -1,0 +1,175 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+body
+  background: linear-gradient(152.43deg, rgba(169, 242, 189, 0.17) -0.41%, rgba(255, 255, 255, 0) 45.05%), #F6F9F7
+  
+.login
+  padding-top: 170px
+  padding-bottom: 80px
+
+  &__container
+    background: #fff
+    overflow: hidden
+    border-radius: 6px
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    +tablet(min)
+      display: flex
+      
+
+  &__desc
+    position: relative
+    background: url(../img/loginDescBg.svg)
+    background-size: cover
+    color: #fff
+    padding-top: 150px
+    +tablet(min)
+      width: 40%
+    +tablet(max)
+      padding-top: 124px
+      height: 445px
+    +mobile
+      padding-top: 80px
+
+  &__social
+    position: absolute
+    bottom: 110px
+    display: flex
+    justify-content: space-between
+    width: 80px
+    left: 50%
+    transform: translateX(-50%)
+    +tablet(max)
+      bottom: 50px
+
+  &__social-icon
+    width: 26px
+    fill: #fff
+
+  &__title
+    font-size: 32px
+    font-weight: bold
+    text-align: center
+    width: 80%
+    margin: 0 auto 24px
+    padding-bottom: 16px
+    position: relative
+    +before(185px,1px,#fff)
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+    +mobile
+
+  &__text
+    font-size: 18px
+    text-align: center
+    max-width: 390px
+    margin: 0 auto
+    +mobile
+      width: 90%
+    
+
+//---------------__form__-----------------//
+
+.form
+  +flex('center')
+  flex-direction: column
+  padding-top: 60px
+  padding-bottom: 70px
+  +tablet(min)
+      width: 60%
+  +tablet(max)
+    padding: 80px 12px
+
+  &__container
+    max-width: 500px
+    width: 100%
+    margin: 0 auto
+
+  &__header
+    margin-bottom: 80px
+    +mobile
+      margin-bottom: 60px
+
+  &__title
+    text-align: center
+    font-size: 18px
+    font-weight: bold
+    margin-bottom: 12px
+
+  &__text
+    font-size: 16px
+    max-width: 440px
+    text-align: center
+    margin: 0 auto
+    a
+      color: $colorMain
+
+  &__input
+    width: 100%
+    &:focus
+    &.invalid
+      border: 1px solid red
+
+  &__buttons
+    +flex('center')
+    max-width: 400px
+    width: 100%
+    margin: 26px auto 0
+    a
+      margin-left: 20%
+
+  &__btn
+    width: 195px
+    height: 55px
+
+  &__new-password
+    width: 100%
+    +mobile(min) 
+      +flex('between')
+      .form__label
+        width: calc(50% - 7px)
+
+  &__checkboxes
+    width: 100%
+    margin-bottom: 64px
+    +mobile(min)
+      margin-top: -20px
+      +flex('between')
+
+  &__checkbox
+    display: block
+    +mobile
+      text-align: center
+      &:not(:last-child)
+        margin-bottom: 20px
+
+  &__checkbox-input
+    position: absolute
+    z-index: -1
+    &:checked + .form__checkbox-title
+      color: $colorMain
+      border-bottom: 1px solid $colorMain
+      >.form__checkbox-icon
+        path
+          fill: $colorMain
+      
+
+  &__checkbox-title
+    cursor: pointer
+    font-size: 18px
+    border-bottom: 1px solid transparent
+    transition: .3s
+    &:hover
+      color: $colorMain
+      border-bottom: 1px solid $colorMain
+      > .form__checkbox-icon
+        path
+          fill: $colorMain
+
+  &__checkbox-icon
+    width: 12px
+    path
+      transition: .3s
+
+@import "./*/*"

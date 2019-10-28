@@ -6,6 +6,7 @@
   +mobile
     margin-bottom: 40px
 
+
 //---------------__main__-----------------//
 
 .main
@@ -19,25 +20,28 @@
     padding-top: 175px
     padding-bottom: 160px
   &::before
+    z-index: 9
     position: absolute
     content: ''
     background: url(../img/mainBg.png)
-    background-repeat: no-repeat
     background-size: contain
+    background-repeat: no-repeat
     background-position-x: right
-    width: 1920px 
-    height: 861px
-    top: -100px
-    left: 50%
-    transform: translateX(-50%)
+    min-width: 1300px
+    height: 638px
+    top: 54px
+    left: 0
+    +tablet(max)
+      display: none
 
   &__container
     position: relative
-    z-index: 1
+    z-index: 10
     max-width: 550px
     +tablet(max)
       text-align: center
       margin: 0 auto
+
   &__subtitle
     margin-bottom: 36px
     font-size: 16px
@@ -46,14 +50,61 @@
       margin: 0 auto 30px
     +mobile
       margin-bottom: 56px
+
   &__scroll-icon
     position: absolute
     width: 29px
     bottom: 124px
+    z-index: 10
     +tablet(max)
       display: none
-      
+
+  &__bg-left
+    position: absolute
+    left: -450px
+    top: -154px
+    z-index: 1
+    width: 1130px
+    +tablet(max)
+      width: 680px
+      top: -54px
+      left: -150px
+    +media(min,1601px)
+      left: -590px
+      top: -244px
+      width: 1360px
+
+  &__bg-right
+    position: absolute
+    right: -645px
+    top: -110px
+    z-index: 1
+    width: 754px
+    +tablet(max)
+      top: 300px
+    +mobile
+      display: none
+
++media(min,1601px)
+  .page-title
+    font-size: 55px
+    margin-bottom: 50px
   
+  .main
+    min-height: 100vh
+    &::before
+      height: 800px
+      width: 1460px
+    &__container
+      max-width: 640px
+    &__subtitle
+      font-size: 20px
+      max-width: 640px
+
+@media only screen and (min-height: 1081px)
+  .main
+    min-height: auto
+
 //---------------__work__-----------------//
 
 .work
@@ -64,22 +115,25 @@
     padding-bottom: 80px
   &__container
     +flex('between-wrap')
+    margin-bottom: 42px
     +media(max, 1150px)
       width: 800px
     +tablet
       width: 534px
     +mobile
       width: 230px
+  &__info
+    text-align: center
+    font-size: 20px
+    a 
+      color: $colorMain
 
 .workCard
-  // max-width: 250px
   padding: 34px 26px
   height: auto
   background: #fff
   box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
   border-radius: 6px
-  // +mobile
-  //   max-width: 216px
   +media(max, 1150px)
     padding: 34px 16px
   &__num
@@ -338,43 +392,55 @@
   border-radius: 50%
   background-color: #fff
   box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
-  background-size: 60%
+  background-size: 80%
   background-repeat: no-repeat
   background-position: center
 
-.logo1,
-.logo12,
-  background-image: url(../img/google.png)
-.logo2,
+.logo1
+  background-image: url(../img/a-contract.webp)
+.logo2
+  background-image: url(../img/altmaster.webp)
+.logo3
+  background-image: url(../img/asklab.webp)
+.logo4
+  background-image: url(../img/chipdip.webp)
+.logo5
+  background-image: url(../img/city.webp)
+.logo6
+  background-image: url(../img/enforsys.webp)
+.logo7
+  background-image: url(../img/eltex.webp)
+.logo8
+  background-image: url(../img/ericon.webp)
+.logo9
+  background-image: url(../img/ezan.webp)
+.logo10
+  background-image: url(../img/fineline.webp)
+.logo11
+  background-image: url(../img/goodwin.webp)
+
+.logo12
+  background-image: url(../img/gsgroup.webp)
 .logo13
-  background-image: url(../img/hm.png)
-.logo3,
+  background-image: url(../img/logo.webp)
 .logo14
-  background-image: url(../img/ea.png)
-.logo4,
+  background-image: url(../img/makro.webp)
 .logo15
-  background-image: url(../img/insta.png)
-.logo5,
+  background-image: url(../img/nek.webp)
 .logo16
-  background-image: url(../img/lg.png)
-.logo6,
+  background-image: url(../img/ncab.webp)
 .logo17
-  background-image: url(../img/yandex.png)
-.logo7,
+  background-image: url(../img/mosobl.webp)
 .logo18
-  background-image: url(../img/insta.png)
-.logo8,
+  background-image: url(../img/pacific.webp)
 .logo19
-  background-image: url(../img/lg.png)
-.logo9,
+  background-image: url(../img/pcb.webp)
 .logo20
-  background-image: url(../img/hm.png)
-.logo10,
+  background-image: url(../img/redhead.webp)
 .logo21
-  background-image: url(../img/google.png)
-.logo11,
+  background-image: url(../img/smartdive.webp)
 .logo22
-  background-image: url(../img/ea.png)
+  background-image: url(../img/symanitron.webp)
 
 //---------------__accaunt__-----------------//
 

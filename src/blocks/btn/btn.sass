@@ -2,35 +2,40 @@
 	display: inline-block
 	position: relative
 	color: $white
-	padding: 11px 16px
 	font-weight: 600
-	transition: .3s
 	border-radius: 6px
 	text-align: center
 	overflow: hidden
-	background-color: $colorMain
-	+before(100%,100%,(linear-gradient(223.8deg, rgba(11, 200, 166, 0.39) 4.45%, rgba(16, 187, 64, 0.45) 84.48%), #FFFFFF))
-		z-index: -1
-		left: 0
-		bottom: 0
+	background: linear-gradient(223.8deg, rgba(11, 200, 166, 0.39) 4.45%, rgba(16, 187, 64, 0.45) 84.48%), #FFFFFF
 	&:hover
-		background-color: transparent
+		.btn__text
+			background: transparent
 	&:active
 
+	&__text
+		position: relative
+		padding: 11px 16px
+		+flex('center')
+		+size(100%)
+		transition: .3s
+		z-index: 1
+		top: 0
+		left: 0
+		background: $colorMain
+
 .btn_big
-	padding: 16px
+	.btn__text
+		padding: 16px
 
 .btn_full
 	width: 100%
 	padding: 20px
-	background-color: #E7E6E6
+	background: #E7E6E6
 	color: #6A6A6A
 	box-shadow: 0px 4px 20px rgba(198, 198, 198, 0)
-	&::before
-		content: none
 	&:hover
 		box-shadow: 0px 4px 20px rgba(198, 198, 198, 0.4)
-		background-color: #E7E6E6
+		background: #E7E6E6
 
 // ---------- Burger ---------- //
 

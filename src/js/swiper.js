@@ -1,39 +1,38 @@
-import Swiper from 'swiper/dist/js/swiper'
+import Swiper from 'swiper/js/swiper'
 
 document.addEventListener('DOMContentLoaded', () => {
   const workSlider = new Swiper('.work__container', {
     loop: false,
-    slidesPerView: 4,
-    spaceBetween: 34,
+    slidesPerView: 1,
+    spaceBetween: 24,
     breakpoints: {
       1150: {
-        slidesPerView: 3
+        slidesPerView: 4,
+        spaceBetween: 34
       },
       991: {
-        slidesPerView: 2
+        slidesPerView: 3
       },
       767: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 24
       }
     }
   })
   const faqSlider = new Swiper('.faq__container', {
     loop: false,
-    slidesPerView: 3,
-    spaceBetween: 40,
+    slidesPerView: 1,
+    spaceBetween: 24,
+    centeredSlides: true,
+    initialSlide: 1,
     navigation: {
       nextEl: '.next-btn',
       prevEl: '.prev-btn'
     },
     breakpoints: {
-      991: {
-        slidesPerView: 1,
-        centeredSlides: true
-      },
-      767: {
-        slidesPerView: 1,
-        spaceBetween: 24
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 40
       }
     }
   })

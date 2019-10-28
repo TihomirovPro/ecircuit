@@ -6,8 +6,8 @@ export function tabsJs () {
     const tabsLinks = tabsNav.children
     const tabs = item.querySelector('.tabsJs').children
 
-    tabsLinks[0].classList.add('active')
-    tabs[0].classList.add('active')
+    // tabsLinks[0].classList.add('active')
+    // tabs[0].classList.add('active')
 
     tabsNav.addEventListener('click', function (e) {
       const target = e.target

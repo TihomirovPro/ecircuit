@@ -1,5 +1,6 @@
 .footer
   position: relative
+  margin-top: auto
   &__top
     border-bottom: 1px solid #C4C4C4
     padding-bottom: 30px
@@ -7,32 +8,29 @@
       +flex('between')
     +mobile
       padding-bottom: 0
-    p
-      max-width: 260px
-      &:not(:last-child)
-        margin-bottom: 20px
   &__title
-    +tablet(max)
-      padding-bottom: 28px
+    +tablet(min)
+      margin-bottom: -16px  
+    p,
+    a
+      margin-bottom: 16px
+
   &__logo
     width: 126px
     margin-bottom: 24px
+    
   &__links
-    width: 590px
+    width: 570px
     +flex('between-wrap')
     +tablet(max)
       width: 100%
       padding-top: 28px
       border-top: 1px solid #C4C4C4
-  &__wrap
-    width: 590px
-    +flex('between')
-    +tablet(max)
-      width: auto
+ 
   &__bottom
     +flex('between')
-    padding-top: 36px
-    padding-bottom: 50px
+    padding-top: 24px
+    padding-bottom: 40px
   
   &__list
     +mobile
@@ -75,11 +73,11 @@
       .footer__icon
         >path
           fill: $colorMain
-  &__policy
-    +tablet(max)
-      display: none
+  // &__policy
+  //   +tablet(max)
+  //     display: none
   &__social
     +tablet(max)
       position: absolute
-      top: 97px
+      top: 110px
       right: 40px

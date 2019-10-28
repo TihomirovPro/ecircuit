@@ -31,8 +31,8 @@ function runWatchers (cb) {
 
   // images
   watch([
-    'images/*.+(jpg|png|gif|svg)',
-    'src/pages/**/*.+(jpg|png|gif|svg)'
+    'images/*.+(webp|jpg|png|gif|svg)',
+    'src/pages/**/*.+(webp|jpg|png|gif|svg)'
   ], series(optimizeImages, reloadServer))
   cb()
 }
