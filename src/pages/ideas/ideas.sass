@@ -1,0 +1,122 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+  
+.ideas
+  position: relative
+  padding-top: 216px
+  padding-bottom: 200px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/ideasBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position: center
+    +size(100%,1155px)
+    left: 50%
+    transform: translateX(-50%)
+    top: 0
+    +tablet(max)
+      background-size: cover
+      height: 635px
+
+  &__container
+    position: relative
+    +tablet(min)
+      align-items: flex-start
+      +flex('between-wrap')
+      
+
+.form
+  position: relative
+  max-width: 858px
+  margin: 0 auto 90px
+  padding: 60px 15px
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  border-radius: 6px
+
+  &__header
+    position: relative
+    text-align: center
+    padding-bottom: 16px
+    margin-bottom: 46px
+    +before(185px,1px,#4BDD8E)
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+
+  &__btn
+    display: block
+    width: 195px
+    height: 55px
+    margin: 0 auto
+
+.idea
+  display: block
+  background: #fff
+  border-radius: 6px
+  padding: 40px 80px 0
+  margin-bottom: 40px
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  +tablet(min)
+    width: calc(50% - 15px)
+  +mobile
+    padding: 40px 20px 0
+
+  &__status
+    text-transform: uppercase
+    margin-bottom: 12px
+    text-align: center
+    font-weight: 600
+    &.consideration
+      color: #DDCE4B
+    &.accepted
+      color: #4BDD8E
+    &.rejected
+      color: #DD4B5D
+    >svg
+      +size(14px)
+      margin-right: 4px
+      position: relative
+      top: 2px
+
+  &__date
+    text-align: center
+    color: #C4C4C4
+    margin-bottom: 30px
+
+  &__text
+    font-size: 18px
+    font-weight: 600
+    margin-bottom: 40px
+    text-align: center
+
+  &__author
+    text-align: center
+    color: #C4C4C4
+    padding-bottom: 40px
+
+  &__admin
+    width: calc(100% + 160px)
+    margin-left: -80px
+    padding: 40px 70px
+    box-shadow: inset 0px 4px 25px rgba(198, 198, 198, 0.25)
+    display: flex
+    +mobile
+      width: calc(100% + 40px)
+      margin-left: -20px
+      padding: 20px 20px 40px
+  
+  &__admin-photo
+    +size(40px)
+    margin-right: 20px
+
+  &__admin-name
+    font-weight: 600
+    color: #6A6A6A
+    margin-bottom: 8px
+
+  &__admin-text
+    color: #6A6A6A
+
+@import "./*/*"

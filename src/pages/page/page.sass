@@ -1,0 +1,823 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+
+.section-title
+  color: #3A3A3A
+  text-align: center
+
+.btn_big
+  max-width: 230px
+  text-transform: uppercase
+  &.center
+    display: block
+    margin: 0 auto
+  +tablet(max)
+    display: block
+    margin: 0 auto
+
+.main
+  position: relative
+  padding-top: 200px
+  padding-bottom: 200px
+  +tablet
+    padding-top: 180px
+    padding-bottom: 186px
+  +mobile
+    padding-top: 100px
+    padding-bottom: 100px
+  &::before
+    z-index: 9
+    position: absolute
+    content: ''
+    background: url(../img/page-main1.png)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position-x: right
+    min-width: 1300px
+    height: 640px
+    top: 54px
+    left: 0
+    +tablet(max)
+      display: none
+
+  &__container
+    position: relative
+    z-index: 10
+    +tablet(min)
+      max-width: 600px
+    >.page-title
+      font-weight: bold
+      color: #3A3A3A
+      margin-bottom: 50px
+      +tablet(max)
+        text-align: center
+    // >.btn
+    //   +mobile
+        
+
+  &__subtitle
+    margin-bottom: 80px
+    font-size: 16px
+    max-width: 456px
+    +tablet(max)
+      text-align: center
+      margin: 0 auto 80px
+    +mobile
+      margin-bottom: 56px
+
+  &__scroll-icon
+    position: absolute
+    width: 29px
+    bottom: 124px
+    z-index: 10
+    +tablet(max)
+      display: none
+
+  &__bg-left
+    position: absolute
+    left: -450px
+    top: -154px
+    z-index: 1
+    width: 1130px
+    +tablet(max)
+      width: 680px
+      top: -54px
+      left: -150px
+    +media(min,1601px)
+      left: -590px
+      top: -244px
+      width: 1360px
+
+  &__bg-right
+    position: absolute
+    right: -370px
+    top: -110px
+    z-index: 1
+    width: 754px
+    +tablet(max)
+      display: none
+
++media(min,1601px)
+  .page-title
+    font-size: 55px
+    margin-bottom: 50px
+  
+  .main
+    min-height: 100vh
+    &::before
+      height: 800px
+      width: 1460px
+    &__container
+      max-width: 640px
+    &__subtitle
+      font-size: 20px
+      max-width: 640px
+
+@media only screen and (min-height: 1081px)
+  .main
+    min-height: auto
+
+//---------------__choice__-----------------//
+
+.choice
+  padding-bottom: 150px
+  +mobile
+    padding-bottom: 80px
+
+  &__container
+    +tablet(max)
+      padding-right: 24px + 30px
+
+.categoryCard
+  background: #FFFFFF
+  box-shadow: 0px 4px 25px rgba(164, 164, 164, 0.25)
+  border-radius: 6px
+  padding: 30px 30px 80px
+  &__icon
+    display: block
+    width: 100%
+    object-fit: contain
+    margin: 0 auto 16px
+  &__title
+    text-align: center
+    margin: 0 auto
+
+//---------------__work__-----------------//
+
+.work
+  padding-bottom: 150px
+  +tablet(max)
+    padding-bottom: 80px
+
+  >.section-title
+    margin-bottom: 100px
+
+  &__nav
+    +flex('between')
+    padding-bottom: 24px
+    border-bottom: 1px solid rgba(76, 221, 116, 0.41)
+
+  &__link
+    width: 50%
+    font-weight: 800
+    font-size: 24px
+    text-align: center
+    +mobile(min)
+      color: #3A3A3A
+    +mobile
+      font-size: 18px
+      &.active
+        color: #3A3A3A
+
+  &__card
+    padding: 26px
+    background: #FFFFFF
+    box-shadow: 0px 4px 25px rgba(164, 164, 164, 0.25)
+    border-radius: 9px
+    +mobile(min)
+      &:not(:last-child)
+        margin-bottom: 30px
+     
+
+  &__title
+    font-weight: bold
+    font-size: 18px
+    margin-bottom: 6px
+    color: #3A3A3A
+
+  &__text
+    font-size: 16px
+
+  &__tabs
+    padding-top: 60px
+    position: relative
+    +flex('between-wrap')
+    margin-bottom: 40px
+    +mobile
+      padding-top: 0
+    +before(1px,(calc(100% + 75px)),(rgba(76, 221, 116, 0.41)))
+      left: calc(50% - .5px)
+      top: -75px
+
+  &__tab
+    position: relative
+    width: calc(100%/3 - 15px)
+    padding-bottom: 45px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    +tablet
+      width: calc(40% - 6px)
+    +mobile
+      padding-bottom: 0
+      width: 100%
+    &:nth-child(2)
+      +tablet
+        width: calc(20% - 6px)
+      +mobile
+        display: none
+      >.signup__num
+        display: block
+    >.signup__num
+      display: none
+      position: relative
+      width: auto
+      background: none
+      +mobile(min)
+        +before(100%,1px,(rgba(76, 221, 116, 0.41)))
+          left: 100%
+        +after(100%,1px,(rgba(76, 221, 116, 0.41)))
+          right: 100%
+        &:before,
+        &:after
+          top: calc((100% - 30px)/2 - .5px)
+      +mobile
+        display: block
+        +size(70px)
+        margin: 26px auto
+      >span
+        +size(90px)
+        margin: 0 15px 30px
+        +tablet(max)
+          +size(70px)
+          margin: 0 6px 30px
+        +mobile
+          margin: 0
+
+.tab-js
+  +mobile
+    display: none
+    &.active
+      display: block
+          
+
+
+//---------------__create__-----------------//
+
+.create
+  padding-bottom: 80px
+  &__img
+    width: 100%
+    height: auto
+    margin-bottom: 70px
+    border-radius: 6px
+  &__signup
+    background: #fff
+    border-radius: 6px
+    overflow: hidden
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    +tablet(min)
+      display: flex
+  &__question
+    +flex('center')
+    font-size: 28px
+    color: #fff
+    padding: 0 75px
+    text-align: center
+    font-weight: 600
+    +size(49%,322px)
+    background-image: url(../img/greenBg.svg)
+    background-size: cover
+    background-position: center
+    +tablet(max)
+      width: 100%
+    +tablet
+      height: 300px
+    +mobile
+      height: 190px
+
+  &__answer
+    +flex('center')
+    +size(51%,322px)
+    text-align: center
+    +tablet(max)
+      padding: 0 50px
+      width: 100%
+    +tablet
+      height: 300px
+
+//---------------__fresh__-----------------//
+
+.fresh
+  position: relative
+  z-index: 1
+  padding-bottom: 120px
+  +tablet
+    padding-bottom: 100px
+  +mobile
+    padding-bottom: 80px
+  
+  &__container
+    +flex('between-wrap')
+
+  &__text
+    font-size: 22px
+    max-width: 340px
+    margin: 0 auto 20px
+
+.freshCard
+  cursor: pointer
+  display: block
+  position: relative
+  overflow: hidden
+  background: #FFFFFF
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  border-radius: 6px
+  margin-bottom: 36px
+  padding: 26px 55px 80px
+  transition: .3s
+  &:hover
+    box-shadow: 0px 4px 20px rgba(198, 198, 198, 0.6)
+    .freshCard
+      &__title
+        color: $colorMain
+  +tablet(max)
+    padding: 26px 20px 80px
+
+  &__status
+    color: $colorMain
+    text-transform: uppercase
+    margin-bottom: 12px
+  &__icon
+    width: 13px
+    margin-right: 6px
+    vertical-align: middle
+    >span
+      vertical-align: middle
+  &__title
+    transition: .3s
+    font-size: 22px
+    font-weight: 600
+    margin-bottom: 10px
+    +tablet(max)
+      font-size: 18px
+      margin-bottom: 30px
+  &__price
+    +flex('between')
+  &__price-title
+    font-weight: 600
+    font-size: 18px
+    margin-bottom: 6px
+    color: #3A3A3A
+    &.color
+      color: #DBBF2C
+  &__offers
+    +flex('between')
+    padding: 18px 55px
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: 0
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    background: #E7E6E6
+    +tablet(max)
+      padding: 18px 20px
+
+//---------------__provider__-----------------//
+
+.provider
+  position: relative
+  padding-bottom: 115px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/providerBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position-x: center
+    +size(100%,660px)
+    left: 50%
+    transform: translateX(-50%)
+    top: -70px
+  &__container
+    position: relative
+    z-index: 1
+    overflow: hidden
+    height: 360px
+    margin: 0 auto 86px
+  &__btn-icon
+    width: 12px
+    height: 9px
+    margin-left: 10px
+    vertical-align: middle
+    >path
+      fill: $colorText
+  &__btn
+    position: relative
+    display: block
+    max-width: max-content
+    z-index: 1
+    text-align: center
+    padding-bottom: 4px
+    margin: 0 auto
+    transition: .3s
+    border-bottom: 1px solid transparent
+    &:hover
+      color: $colorMain
+      border-bottom: 1px solid $colorMain
+      .provider__btn-icon
+        >path
+          fill: $colorMain
+
+
+.bubbles
+  width: 2060px
+  margin: 0 auto
+  position: relative
+
+.bubble
+  position: absolute
+  width: 143px
+  height: 143px
+  border-radius: 50%
+  background-color: #fff
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  background-size: 80%
+  background-repeat: no-repeat
+  background-position: center
+
+.logo1
+  background-image: url(../img/a-contract.webp)
+.logo2
+  background-image: url(../img/altmaster.webp)
+.logo3
+  background-image: url(../img/asklab.webp)
+.logo4
+  background-image: url(../img/chipdip.webp)
+.logo5
+  background-image: url(../img/city.webp)
+.logo6
+  background-image: url(../img/enforsys.webp)
+.logo7
+  background-image: url(../img/eltex.webp)
+.logo8
+  background-image: url(../img/ericon.webp)
+.logo9
+  background-image: url(../img/ezan.webp)
+.logo10
+  background-image: url(../img/fineline.webp)
+.logo11
+  background-image: url(../img/goodwin.webp)
+.logo12
+  background-image: url(../img/gsgroup.webp)
+.logo13
+  background-image: url(../img/logo.webp)
+.logo14
+  background-image: url(../img/makro.webp)
+.logo15
+  background-image: url(../img/nek.webp)
+.logo16
+  background-image: url(../img/ncab.webp)
+.logo17
+  background-image: url(../img/mosobl.webp)
+.logo18
+  background-image: url(../img/pacific.webp)
+.logo19
+  background-image: url(../img/pcb.webp)
+.logo20
+  background-image: url(../img/redhead.webp)
+.logo21
+  background-image: url(../img/smartdive.webp)
+.logo22
+  background-image: url(../img/symanitron.webp)
+  
+//---------------__signup__-----------------//
+
+.signup
+  padding-bottom: 80px
+  &__subtitle
+    font-size: 18px
+    line-height: 22px
+    text-align: center
+    margin-bottom: 30px
+
+  .section-title
+    +mobile
+      text-align: center
+
+  .btn
+    display: block
+    width: 195px
+    height: 55px
+    text-align: center
+    margin: 0 auto
+
+  &__container
+    position: relative
+    padding-top: 90px
+    +flex('between')
+    +before(80%,2px,(rgba(11, 200, 166, 0.39)))
+      top: 123px
+      left: 50%
+      transform: translateX(-50%)
+      +mobile
+          width: 60%
+    +mobile
+      flex-wrap: wrap
+      &::before
+        display: none
+      
+  &__step
+    position: relative
+    z-index: 1
+    width: 190px
+    +mobile
+      width: 50%
+      margin-bottom: 40px
+
+
+  &__num
+    width: 100px
+    margin: 0 auto
+    background: #f9f9f9
+    span
+      display: block
+      +size(67px)
+      +flex('center')
+      margin: 0 auto 12px
+
+      color: #fff
+      font-size: 20px
+      font-weight: bold
+      text-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+
+      border-radius: 50%
+      background: linear-gradient(136.42deg, rgba(11, 200, 166, 0.39) 0%, rgba(76, 221, 116, 0.41) 96.35%), #FFFFFF
+      box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+
+  &__text
+    text-align: center
+    font-size: 14px
+
+//---------------__media__-----------------//
+
+.media
+  padding-bottom: 100px
+  +mobile
+    padding-bottom: 40px
+
+  >.section-title
+    margin-bottom: 30px
+    text-align: center
+
+  >.section-subtitle
+    text-align: center
+    max-width: 60%
+    margin: 0 auto 50px
+    +mobile
+      max-width: 100%
+
+  &__item
+    box-shadow: 0px 4px 25px rgba(164, 164, 164, 0.25);
+    border-radius: 6px
+    background: #fff
+    padding: 30px 60px 80px
+    +tablet
+      padding: 30px 40px 60px
+    +mobile
+      padding: 30px
+
+  &__icon
+    max-width: 186px
+    width: 100%
+    margin: 0 auto
+    margin-bottom: 86px
+    padding-bottom: 16px
+    border-bottom: 1px solid $colorMain
+    +tablet
+      margin-bottom: 60px
+    +mobile
+      margin-bottom: 40px
+
+  &__logo
+    display: block
+    height: 56px
+    max-width: 130px
+    margin: 0 auto
+    object-fit: contain
+
+
+  &__text
+    position: relative
+    text-align: center
+    color: #000
+    font-size: 16px
+    &::after,
+    &::before
+      position: absolute
+      font-size: 64px
+      line-height: 24px
+      color: $colorMain
+      top: 50%
+      transform: translateY(calc(-50% + 20px))
+    &::after
+      content: '“'
+      left: -30px
+      +mobile
+        left: -22px
+    &::before
+      content: '”'
+      right: -30px
+      +mobile
+        right: -22px
+
+//---------------__about__-----------------//
+
+.about
+  padding-bottom: 70px
+  +mobile
+    padding-left: 0
+    padding-right: 0
+  &__container
+    background: #fff
+    box-shadow: 0px 4px 25px rgba(164, 164, 164, 0.25)
+    border-radius: 6px
+    overflow: hidden
+    +tablet(min)
+      display: flex
+      
+
+  &__title
+    +flex('center')
+    color: #fff
+    font-weight: 800
+    font-size: 32px
+    height: 214px
+    background: linear-gradient(231.86deg, rgba(0, 180, 147, 0.39) -0.32%, rgba(16, 187, 64, 0.41) 80.5%)
+    +tablet(min)
+      width: 40%
+      height: auto
+      border-radius: 6px 0px 240px 6px
+
+  &__desc
+    padding: 60px 0
+    +tablet(min)
+      padding: 100px 70px 70px
+      width: 60%
+
+  &__slider
+    position: relative
+    height: 75px + 70px
+    padding: 40px 30px 30px
+    overflow: hidden
+    +tablet(max)
+      padding-right: 0
+      padding-left: 0
+    >.swiper-wrapper
+      position: static
+      align-items: center
+
+  &__slide
+    position: static
+    height: auto
+    cursor: pointer
+    &.swiper-slide-next,
+    &.swiper-slide-prev
+      .about__photo
+        +size(45px)
+        filter: grayscale(1) brightness(1)
+        
+    &.swiper-slide-active
+      .about__photo
+        position: relative
+        left: 50%
+        +size(75px)
+        margin: 0
+        transform: translateX(-50%)
+        filter: grayscale(0) brightness(1)
+
+  &__photo
+    display: block
+    margin: 0 auto
+    filter: grayscale(1) brightness(1.3)
+    +size(35px)
+    transition: width .3s, height .3s
+    border-radius: 50%
+
+  &__text
+    display: none
+    text-align: center
+    +tablet(max)
+      padding: 0 15px
+
+  &__slide-desc
+    display: none
+    bottom: -60px
+    text-align: center
+    color: #3A3A3A
+
+  &__name
+    font-weight: 600
+    font-size: 18px
+    margin-bottom: 6px
+
+
+.btn-next,
+.btn-prev
+  +flex('center')
+  position: absolute
+  width: 30px
+  height: 100%
+  top: 0
+  background: #fff
+  color: $colorMain
+  cursor: pointer
+  +tablet(max)
+    display: none
+
+.btn-next
+  right: 0
+.btn-prev
+  left: 0
+
+
+//---------------__faq__-----------------//
+
+.faq
+  position: relative
+  height: 560px
+  padding-bottom: 120px
+  +tablet
+    height: 460px
+    padding-bottom: 114px
+  +mobile
+    height: 480px
+    padding-bottom: 80px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/faqBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position: center
+    top: -60px
+    +size(100%,560px)
+    min-width: 1700px
+    left: 50%
+    transform: translateX(-50%)
+  &__slider
+    position: relative
+  &__container
+    z-index: 1
+    max-width: 980px
+    margin: 0 auto
+    +tablet(min)
+      overflow: hidden
+    +tablet
+      max-width: 400px
+    +mobile
+      margin: 0
+      padding-right: 54px
+      
+  &__list
+    min-height: 350px
+    display: flex
+    align-items: center
+
+  &__item
+    display: block
+    height: 118px
+    overflow: hidden
+    background: #fff
+    text-align: center
+    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+    border-radius: 6px
+    padding: 40px 40px 16px
+    transition: .3s
+    cursor: pointer
+    &.open
+      .faq__text
+        top: 0
+    +media(max, 1150px)
+      padding: 40px 20px 16px
+
+  &__title
+    position: relative
+    font-size: 16px
+    font-weight: 600
+    padding-bottom: 10px
+    margin-bottom: 16px
+    +before(114px,1px,$colorMain)
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+  &__text
+    transition: .3s
+    position: relative
+    top: 40px
+
+.next-btn,
+.prev-btn
+  cursor: pointer
+  position: absolute
+  left: 0
+  top: 50%
+  transform: translateY(-50%)
+  padding: 10px 0 10px 10px
+  z-index: 100
+  +tablet(max)
+    display: none
+.prev-btn
+  left: auto
+  right: 0

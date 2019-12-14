@@ -1,0 +1,71 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = 'news'
+  - var description = 'news'
+
+//--------------------------------------------------//
+
+block head
+  +style('news')
+
+block startBody
+  +header()
+ 
+block endBody
+  +footer()
+  +script('main')
+  //- +script('news')
+
+//--------------------------------------------------//
+
+mixin newsCard(data)
+  +b.ARTICLE.news-card
+    +e.IMG.photo(src!=data.photo alt='')
+    +e.info
+        +e.TIME.date!=data.date
+        +e.H2.title!=data.title
+    +e.text
+      !=data.text
+    +e.P.views
+      |<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 11"><path fill="#6A6A6A" d="M14.64 5.07C13.07 1.76 10.7.1 7.5.1 4.3.09 1.93 1.76.36 5.07a1 1 0 000 .86C1.93 9.24 4.3 10.9 7.5 10.9c3.2 0 5.57-1.67 7.14-4.98a1 1 0 000-.86zM7.5 9.72c-2.68 0-4.64-1.36-6.02-4.22C2.86 2.64 4.82 1.28 7.5 1.28c2.68 0 4.64 1.36 6.02 4.22-1.38 2.86-3.34 4.22-6.02 4.22zm-.07-7.14a2.92 2.92 0 100 5.84 2.92 2.92 0 000-5.84zm0 4.78a1.86 1.86 0 110-3.72 1.86 1.86 0 010 3.72z"/></svg>
+      span!=data.views
+
+block content
+  +b.news.wrapper
+    .page-heading
+      h1.page-title Наши новости
+      h2.page-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu amet, egestas a scelerisque sollicitudin. Nec lorem condimentum diam, turpis purus, suspendisse. Diam ac faucibus purus sit tellus interdum.
+
+    +e.container
+      +newsCard({
+        photo: 'img/news1.jpg',
+        date: '22.10.2019',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        views: '195',
+        text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ultricies porta velit proin amet enim elementum. Eu, id elementum viverra sed senectus amet, turpis. A, orci risus, mattis tristique consectetur tristique facilisis enim lacus. Sagittis amet rutrum dictumst lectus libero lacus, neque. Sodales donec maecenas pulvinar fames magna orci nisl feugiat.</p><p>Libero tortor odio dolor ipsum turpis sed pulvinar dolor cras. Ac proin eu fringilla adipiscing elementum mauris consequat eu mauris. Auctor elementum sit pellentesque eros. Tellus tincidunt vulputate vel mauris, libero, consequat massa mauris.</p>'
+      })
+      +newsCard({
+        photo: 'img/news1.jpg',
+        date: '22.10.2019',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        views: '195',
+        text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ultricies porta velit proin amet enim elementum. Eu, id elementum viverra sed senectus amet, turpis. A, orci risus, mattis tristique consectetur tristique facilisis enim lacus. Sagittis amet rutrum dictumst lectus libero lacus, neque. Sodales donec maecenas pulvinar fames magna orci nisl feugiat.</p><p>Eget in praesent quam pulvinar iaculis. Adipiscing arcu lacus, quam egestas. In at pellentesque aliquam mi, id ullamcorper. Odio proin sed pharetra eget odio aliquam. Felis volutpat aliquet feugiat ut praesent gravida.</p><p>Libero tortor odio dolor ipsum turpis sed pulvinar dolor cras. Ac proin eu fringilla adipiscing elementum mauris consequat eu mauris. Auctor elementum sit pellentesque eros. Tellus tincidunt vulputate vel mauris, libero, consequat massa mauris.</p>'
+      })
+      +newsCard({
+        photo: 'img/news1.jpg',
+        date: '22.10.2019',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        views: '195',
+        text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ultricies porta velit proin amet enim elementum. Eu, id elementum viverra sed senectus amet, turpis. A, orci risus, mattis tristique consectetur tristique facilisis enim lacus. Sagittis amet rutrum dictumst lectus libero lacus, neque. Sodales donec maecenas pulvinar fames magna orci nisl feugiat.</p><p>Eget in praesent quam pulvinar iaculis. Adipiscing arcu lacus, quam egestas. In at pellentesque aliquam mi, id ullamcorper. Odio proin sed pharetra eget odio aliquam. Felis volutpat aliquet feugiat ut praesent gravida.</p><p>Libero tortor odio dolor ipsum turpis sed pulvinar dolor cras. Ac proin eu fringilla adipiscing elementum mauris consequat eu mauris. Auctor elementum sit pellentesque eros. Tellus tincidunt vulputate vel mauris, libero, consequat massa mauris.</p>'
+      })
+      +newsCard({
+        photo: 'img/news1.jpg',
+        date: '22.10.2019',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        views: '195',
+        text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas ultricies porta velit proin amet enim elementum. Eu, id elementum viverra sed senectus amet, turpis. A, orci risus, mattis tristique consectetur tristique facilisis enim lacus. Sagittis amet rutrum dictumst lectus libero lacus, neque. Sodales donec maecenas pulvinar fames magna orci nisl feugiat.</p><p>Eget in praesent quam pulvinar iaculis. Adipiscing arcu lacus, quam egestas. In at pellentesque aliquam mi, id ullamcorper. Odio proin sed pharetra eget odio aliquam. Felis volutpat aliquet feugiat ut praesent gravida.</p><p>Libero tortor odio dolor ipsum turpis sed pulvinar dolor cras. Ac proin eu fringilla adipiscing elementum mauris consequat eu mauris. Auctor elementum sit pellentesque eros. Tellus tincidunt vulputate vel mauris, libero, consequat massa mauris.</p>'
+      })
+    +e.A.btn.btn.btn_full(href="#") Показать больше

@@ -1,0 +1,33 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+  
+body
+  color: #41494f
+
+.content
+  padding-top: 120px
+  padding-bottom: 120px
+  +mobile
+    padding-bottom: 60px
+
+  h3
+    font-weight: 600
+    font-size: 28px
+    margin-bottom: 24px
+    +mobile
+      font-size: 6vw
+
+  h2
+    font-size: 32px
+    padding-bottom: 24px
+    font-weight: 600
+    margin-bottom: 24px
+    border-bottom: 1px solid #edf4f8
+    +mobile
+      font-size: 8vw
+
+  p,ul,li
+    margin-bottom: 16px
+
+
+@import "./*/*"

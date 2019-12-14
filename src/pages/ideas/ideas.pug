@@ -1,0 +1,90 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = 'ideas'
+  - var description = 'ideas'
+
+//--------------------------------------------------//
+
+block head
+  +style('ideas')
+
+block startBody
+  +header()
+ 
+block endBody
+  +footer()
+  +script('main')
+  //- +script('ideas')
+
+//--------------------------------------------------//
+
+mixin ideaCard(data)
+  +b.idea
+    if data.status == 'new'
+      +e.P.status.consideration
+        |<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 15"><path stroke="#DDCE4B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13A6 6 0 107 1a6 6 0 000 12z"/><path stroke="#DDCE4B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v3l2 2"/></svg>
+        |НА РАССМОТРЕНИИ
+    else if data.status == 'add'
+      +e.P.status.accepted
+        |<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 15"><path fill="#4BDD8E" d="M13.4.78a1.17 1.17 0 00-1.61.34L5.25 11.2 2.06 8.25A1.17 1.17 0 10.48 9.96l4.18 3.87.18.14a1.17 1.17 0 001.61-.34l7.3-11.24A1.17 1.17 0 0013.4.78z"/></svg>
+        |ПРИНЯТО
+    else if data.status == 'reject'
+      +e.P.status.rejected ОТКЛОНЕНО
+    +e.P.date!=data.date
+    +e.P.text!=data.text
+    +e.P.author!=data.author
+    if data.admin == true
+      +e.admin
+        +e.IMG.admin-photo(src="img/admin.jpg", alt="")
+        +e.admin-info
+          +e.P.admin-name Модератор
+          +e.P.admin-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis porttitor in viverra diam integer et mi velit. Nunc.
+
+block content
+  +b.ideas.wrapper
+    .page-heading
+      h1.page-title Идеи и предложения
+      h2.page-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu amet, egestas a scelerisque sollicitudin. Nec lorem condimentum diam, turpis purus, suspendisse. Diam ac faucibus purus sit tellus interdum.
+    +b.FORM.form
+      +e.container
+        +e.header
+          +e.P.title У Вас есть идея?
+          +e.P.text Помогите нам улучшить сервис!
+        +e.LABEL.label
+          +e.SPAN.label-title Напишите свое обращение
+          +e.TEXTAREA.input._textarea(name='text' placeholder='Что Вы хотите нам сказать?' required)
+        +e.LABEL.label
+          +e.SPAN.label-title Введите Ваш e-mail
+          +e.INPUT.input(type='email' name='email' placeholder='example@ecircuit.co' required)
+        +e.BUTTON.btn.btn
+            span.btn__text Отправить
+    +e.container
+      +ideaCard({
+        status: 'new',
+        date: '22.10.2019',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque orci semper commodo et. Libero ornare nisi quam odio a luctus proin orci.',
+        author: 'dan.romero@example.com',
+      })
+      +ideaCard({
+        status: 'add',
+        date: '22.10.2019',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo porttitor scelerisque sapien, nam. Ut at feugiat semper augue est, ut odio. Nibh sagittis, convallis nunc auctor quam. Neque, sapien pellentesque nec viverra mi cursus elit. Enim ut.',
+        author: 'dan.romero@example.com',
+        admin: true
+      })
+      +ideaCard({
+        status: 'reject',
+        date: '22.10.2019',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo porttitor scelerisque sapien, nam. Ut at feugiat semper augue est, ut odio. Nibh sagittis, convallis nunc auctor quam. Neque, sapien pellentesque nec viverra mi cursus elit. Enim ut.',
+        author: 'dan.romero@example.com',
+        admin: true
+      })
+      +ideaCard({
+        status: 'new',
+        date: '22.10.2019',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque orci semper commodo et. Libero ornare nisi quam odio a luctus proin orci.',
+        author: 'dan.romero@example.com',
+      })

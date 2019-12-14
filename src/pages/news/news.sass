@@ -1,0 +1,145 @@
+@import "../../styles/vars"
+@import "../../styles/mixins"
+  
+.news
+  position: relative
+  padding-top: 200px
+  padding-bottom: 100px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/newsBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position: center
+    +size(100%,616px)
+    left: 50%
+    transform: translateX(-50%)
+    top: 200px
+  &__container
+    +flex('between-wrap')
+    // columns: 2
+
+.page-heading
+  z-index: 1
+  &::after
+    z-index: -1
+    position: absolute
+    top: -80px
+    right: 180px
+    content: ''
+    +size(110px)
+    background: #E3F8E8
+    border-radius: 50%
+    +tablet(max)
+      top: -140px
+      right: -10px
+
+.news-card
+  position: relative
+  border-radius: 6px
+  width: 100%
+  position: relative
+  overflow: hidden
+  // height: 380px
+  background: #fff
+  transition: .3s
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  margin-bottom: 60px
+  z-index: 1
+  +tablet(min)
+    +flex('between')
+  &.open
+    z-index: 10
+    &:not(:last-child),
+      margin-bottom: -100%
+    &:nth-last-child(2)
+      margin-bottom: 0
+    .news-card__btn
+      background: #CFEED7
+
+  &__photo
+    width: 48%
+    height: 100%
+    object-fit: cover
+    vertical-align: middle
+    +tablet(max)
+      width: 100%
+      height: auto
+
+  &__info
+    position: absolute
+    top: 120px
+    left: 0
+    width: 48%
+    text-align: center
+    color: #fff
+    +tablet(max)
+      width: 100%
+    +mobile
+      top: 12vw
+
+  &__title
+    position: relative
+    max-width: 290px
+    margin: 0 auto 30px
+    text-align: center
+    font-weight: bold
+    font-size: 22px
+    padding-bottom: 30px
+    +before(104px,1px,#4BDD8E)
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+    +mobile
+      font-size: 18px
+
+  &__date
+    display: block
+    margin-bottom: 40px
+
+  &__views
+    position: absolute
+    width: 52%
+    right: 0
+    bottom: 0
+    padding-top: 20px
+    padding-bottom: 60px
+    text-align: center
+    +mobile(min)
+      +before(380px,1px,#6A6A6A)
+        left: 50%
+        transform: translateX(-50%)
+        top: 0
+    >svg
+      margin-right: 8px
+      width: 14px
+      vertical-align: middle
+    +tablet(max)
+      width: 100%
+
+  &__text
+    font-size: 16px
+    color: #6A6A6A
+    padding: 80px 60px 90px
+    text-align: center
+    >p
+      margin-bottom: 30px
+    +tablet(max)
+      padding-top: 30px
+    +mobile
+      padding: 30px 30px 90px
+        
+
+  &__btn
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    cursor: pointer
+    padding: 28px 0
+    transition: .3s
+    background: #E5E5E5
+    text-align: center
+
+@import "./*/*"

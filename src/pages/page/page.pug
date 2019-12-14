@@ -1,0 +1,276 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = 'page'
+  - var description = 'page'
+  //- - var pageId = 'pagePage'
+
+//--------------------------------------------------//
+
+block head
+  +style('swiper')
+  +style('page')
+
+block startBody
+  +header()
+ 
+block endBody
+  +footer()
+  +script('swiper')
+  +script('main')
+  +script('bubblesSlider')
+
+//--------------------------------------------------//
+
+
+mixin categoryCard(icon,title)
+  +b.categoryCard.swiper-slide
+    +e.IMG.icon.img(src=icon alt='')
+    +e.title!=title
+
+mixin freshCard(title,price,quantity,offers,time)
+  +b.freshCard(class=attributes.class)
+    +e.P.status
+      span Категория
+    +e.P.title!=title
+    +e.price
+      div
+        +e.P.price-title Бюджет
+        p!=price 
+          |  &#8381;
+      div
+        +e.P.price-title.color Экономия
+        p!=quantity 
+          |  &#8381;
+    +e.offers
+      p!=offers
+      p!=time
+
+mixin faq(title,text)
+  +e.item.swiper-slide.accardionJs
+    +e.P.title!=title
+    +e.P.text.accardionContentJs!=text
+
+//---------------__page content__-----------------//
+
+block content
+  .wrapper
+    +b.SECTION.main
+      +e.container
+        h1.page-title Экономьте от 25% бюджета при закупке электронных компонентов
+        +e.H2.subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit vitae varius proin tempor facilisi bibendum. Sed tortor velit egestas purus eu neque. Massa euismod.
+        a.btn.btn_big(href='#')
+          span.btn__text Попробовать бесплатно
+
+      |<svg class="main__bg-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 866 885"><path d="M856 500c54 179-212 315-392 369A339 339 0 0142 642C-12 463-30 64 149 10s653 311 707 490z" fill="#e3f8e8"/></svg>
+
+  //---------------__choice__-----------------//
+
+  +b.SECTION.choice.wrapper
+    h3.section-title Почему клиенты выбирают «Ecircuit»
+    +e.container
+      .swiper-wrapper
+        +categoryCard('img/choice1.png','Лидирующие поставщики уже на платформе')
+        +categoryCard('img/choice2.png','Без бюрократии, ЭЦП и сложной регистрации')
+        +categoryCard('img/choice3.png','Торги по срокам, цене и условиям работы')
+        +categoryCard('img/choice4.png','Размещение конкурсов бесплатно навсегда')
+
+  //---------------__work__-----------------//
+
+  mixin workCard(title, text)
+    +e.card
+      +e.P.title=title
+      +e.P.text=text
+
+  +b.SECTION.work.wrapper
+    h3.section-title Как это работает?
+    +e.nav
+      +e.A.link.tab-link-js(href='#z') Заказчикам
+      +e.A.link.tab-link-js(href='#p') Поставщикам
+    +e.tabs
+      +e.tab.tab-js#z
+        .signup__num
+          span 1
+        +workCard('Создать конкурс','На создание конкурса уйдет 5 минут, проект моментально станет доступен множеству поставщиков. Никаких ЭЦП и сложных процедур. Вам это понравится.')
+        .signup__num
+          span 2
+        +workCard('Ожидать предложения','Поставщики видят цены, сроки друг друга и постоянно конкурируют за Ваш проект.')
+        .signup__num
+          span 3
+        +workCard('Провести переговоры','Проводите переговоры через онлайн чат с теми, кто Вас заинтересовал. Не отвлекайтесь больше на звонки и письма от поставщиков.')
+        .signup__num
+          span 4
+        +workCard('Заключить сделку','Выбирайте поставщиков не в слепую, а основываясь на реальных отзывах и рейтингах, которые были оставлены заказчиками по завершению проектов.')
+      +e.tab
+        .signup__num
+          span 1
+        .signup__num
+          span 2
+        .signup__num
+          span 3
+        .signup__num
+          span 4
+      +e.tab.tab-js#p
+        .signup__num
+          span 1
+        +workCard('Создать конкурс','На создание конкурса уйдет 5 минут, проект моментально станет доступен множеству поставщиков. Никаких ЭЦП и сложных процедур. Вам это понравится.')
+        .signup__num
+          span 2
+        +workCard('Ожидать предложения','Поставщики видят цены, сроки друг друга и постоянно конкурируют за Ваш проект.')
+        .signup__num
+          span 3
+        +workCard('Провести переговоры','Проводите переговоры через онлайн чат с теми, кто Вас заинтересовал. Не отвлекайтесь больше на звонки и письма от поставщиков.')
+        .signup__num
+          span 4
+        +workCard('Заключить сделку','Выбирайте поставщиков не в слепую, а основываясь на реальных отзывах и рейтингах, которые были оставлены заказчиками по завершению проектов.')
+
+    a.btn.btn_big.center(href='#')
+      span.btn__text ЗАРЕГИСТРИРОВАТЬСЯ
+
+
+  //---------------__create__-----------------//
+
+  +b.SECTION.create.wrapper
+    h3.section-title Как создать тендер за 3 минуты:
+    +e.IMG.img(src='img/work1.png' alt='')
+    +e.signup
+      +e.question
+        p Хотите зарабатывать больше?
+      +e.answer
+        div
+          a.btn.btn_big(href='#')
+            span.btn__text Создать тендер
+
+  //---------------__fresh__-----------------//
+
+  +b.SECTION.fresh.wrapper
+    h3.section-title Примеры экономии с Ecircuit
+    +e.container.f-c
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      +freshCard('Название для конкурса','150 000 - 200 000','30 000','4 предложения','Осталось 3 дня').f-c__i
+      a.btn.btn_full(href='#') Посмотреть все конкурсы
+
+  //---------------__provider__-----------------//
+
+  +b.SECTION.provider
+    h3.section-title.wrapper Лидирующие поставщики на платформе
+    +e.container
+      .bubbles
+    +e.A.btn(href='#') 
+      | Посмотреть всех поставщиков
+      +e.SVG.btn-icon(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 9")
+        path(d="M11.5 4.7c.2-.2.2-.5 0-.7L8.3.8a.5.5 0 00-.7.7l2.9 2.8-2.9 2.9a.5.5 0 00.7.7l3.2-3.2zM.8 4.8h10.4v-1H.8v1z")
+
+  //---------------__signup__-----------------//
+
+  +b.SECTION.signup.wrapper
+    h2.section-title Хотите зарабатывать больше?
+    +e.H3.subtitle Создайте аккаунт бесплатно уже сегодня
+    a.btn(href='#')
+      span.btn__text Зарегистрироваться
+    +e.container
+      +e.step
+        +e.num
+          span 1
+        +e.text Проходите короткую регистрацию 
+      +e.step
+        +e.num
+          span 2
+        +e.text Заполняете данные в личном кабинете
+      +e.step
+        +e.num
+          span 3
+        +e.text Мы подтверждаем статус вашей компании
+      +e.step
+        +e.num
+          span 4
+        +e.text Открываем доступ к размещению конкурсов и предложений
+
+  //---------------__media__-----------------//
+
+  +b.SECTION.media.wrapper
+    h2.section-title СМИ о нас
+    h4.section-subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo turpis turpis scelerisque et duis turpis et mauris morbi. Vitae habitant suscipit malesuada ut tellus
+    +e.container.f-c
+      +e.item.f-c__i
+        +e.icon
+          +e.IMG.logo(src="img/media-icon1.png", alt="")
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis ullamcorper ut nisl at suscipit aliquam, venenatis at enim. Pellentesque duis arcu quis cras malesuada amet ac.
+      +e.item.f-c__i
+        +e.icon
+          +e.IMG.logo(src="img/media-icon2.png", alt="")
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis ullamcorper ut nisl at suscipit aliquam, venenatis at enim. Pellentesque duis arcu quis cras malesuada amet ac.
+      +e.item.f-c__i
+        +e.icon
+          +e.IMG.logo(src="img/media-icon3.png", alt="")
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis ullamcorper ut nisl at suscipit aliquam, venenatis at enim. Pellentesque duis arcu quis cras malesuada amet ac.
+      +e.item.f-c__i
+        +e.icon
+          +e.IMG.logo(src="img/media-icon4.png", alt="")
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis ullamcorper ut nisl at suscipit aliquam, venenatis at enim. Pellentesque duis arcu quis cras malesuada amet ac.
+
+  //---------------__about__-----------------//
+
+  mixin slide()
+    +e.slide.swiper-slide
+      +e.IMG.photo(src="img/team1.png", alt="")
+      
+  +b.SECTION.about.wrapper
+    +e.container
+      +e.title Что о нас говорят:
+      +e.desc
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet lobortis volutpat dis amet sit mi. Id sed orci tortor sed aliquam ipsum pellentesque lectus nulla. Etiam volutpat condimentum 1
+        +e.P.text Lorem ipsum dolor sit amet, elit. 2
+        +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. 3
+        +e.P.text Lorem ipsum dolor sit amet, 4
+        +e.P.text Lorem ipsum dolor 5
+        +e.slider
+          .swiper-wrapper
+            +slide
+            +slide
+            +slide
+            +slide
+            +slide
+          .btn-next &#9658;
+          .btn-prev &#9668;
+        +e.slide-desc
+          +e.P.name Theresa Hawkins 1
+          +e.P.mail dan.romero@example.com
+        +e.slide-desc
+          +e.P.name Theresa Hawkins 2
+          +e.P.mail dan.romero@example.com
+        +e.slide-desc
+          +e.P.name Theresa Hawkins 3
+          +e.P.mail dan.romero@example.com
+        +e.slide-desc
+          +e.P.name Theresa Hawkins 4
+          +e.P.mail dan.romero@example.com
+        +e.slide-desc
+          +e.P.name Theresa Hawkins 5
+          +e.P.mail dan.romero@example.com
+
+  //---------------__faq__-----------------//
+
+  +b.SECTION.faq.wrapper
+      h3.section-title Ответы на вопросы
+      +e.slider
+        +e.container
+          +e.list.swiper-wrapper
+            +faq('Зачем была создана b2b биржа Ecircuit?','Рынок промышленной электроники в РФ насчитывает тысячи компаний, мы решили что необходимость в подобной платформе назрела именно сейчас, учитывая экономическую ситуацию и тренды в пользу цифровизации. Наша задача помочь заказчикам уложиться в бюджет и сроки по своим проектам, а поставщикам найти новых клиентов с минимальными затратами.')
+            +faq('Кто может регистрироваться на платформе?','На платформе могут регистрироваться исключительно юридические лица, как со стороны заказчика, так и со стороны поставщика. Для прохождения модерации на платформе, Вам необходимо будет подтвердить свое причастие к компании.')
+            +faq('Размещение конкурсов на платформе бесплатно?','Стоимость участия для заказчиков абсолютно бесплатна. Вы можете создавать неограниченное количество конкурсов по всем вашим проектам.')
+            +faq('Сложно ли создать конкурс на платформе?','Создание конкурса займет не более 1 минуты. Для начала, заказчик создает конкурс, заполняет информацию о проекте, прикрепляет файлы для оценки проекта и ожидает предложения в личный кабинет и на почту. Поставщики в свою очередь, торгуются за ваш проект между собой. Заказчику останется лишь выбрать победителя, исходя из рейтинга и статуса поставщика.')
+            +faq('В каких категориях можно участвовать?','На платформе можно создавать конкурсы в следующих категориях (Закупка, производство, оборудование). Доступны практически все возможные типы конкурсов, от производства печатных плат до поставка банковского оборудования.')
+            +faq('Есть ли мобильная версия платформы?','Да, есть. Учитывая количество людей, которые ездят по встречам и командировкам, мы создали абсолютно адаптированную мобильную версии платформы. Вам доступен полный функционал, включая режим торгов и чата.')
+          .next-btn
+            svg(xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="21" viewBox="0 0 13 21")
+              path(fill="#fff" d="M12.2 1.5v17.7c0 1.2-1.4 1.8-2.3 1l-8.7-8.9c-.5-.5-.5-1.4 0-2L10 .6c.9-.9 2.3-.3 2.3 1z")
+          .prev-btn
+            svg(xmlns="http://www.w3.org/2000/svg" fill="none" width="13" height="21" viewBox="0 0 13 21")
+              path(fill="#fff" d="M.7 19.2V1.5C.7.2 2-.4 3 .5l8.7 8.9c.5.5.5 1.4 0 2L3 20.1c-.9.8-2.3.2-2.3-1z")

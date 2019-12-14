@@ -1,0 +1,188 @@
+extends ../../layout/page
+
+//--------------------------------------------------//
+
+block vars
+  - var title = 'about'
+  - var description = 'about'
+
+//--------------------------------------------------//
+
+block head
+  +style('swiper')
+  +style('about')
+
+block startBody
+  +header()
+ 
+block endBody
+  +footer()
+  +script('swiper')
+  +script('main')
+
+//--------------------------------------------------//
+
+mixin mainCard(icon,title)
+  +b.categoryCard(class=attributes.class)
+    +e.IMG.icon.img(src=icon alt='')
+    +e.title!=title
+
+mixin mainCardHover(icon,iconHover,title)
+  +b.categoryCard(class=attributes.class)
+    +e.IMG.icon.img(src=icon alt='')
+    +e.title!=title
+
+block content
+  
+  +b.SECTION.main.wrapper
+    .page-heading
+      h1.page-title О платформе Ecircuit
+      h2.page-subtitle Ecircuit — тендерная площадка, которая помогает заказчикам в сфере промышленной электроники выбрать оптимального поставщика, а поставщикам найти своего клиента.
+    +e.container
+      +mainCard('img/about1.png','Лидирующие поставщики уже на платформе')
+      +mainCard('img/about2.png','Без бюрократии, ЭЦП и сложной регистрации')
+      +mainCard('img/about3.png','Торги по срокам, цене и условиям работы')
+      +mainCard('img/about4.png','Размещение конкурсов бесплатно навсегда')
+  
+  +b.SECTION.audience.wrapper
+    +e.container
+      +mainCardHover('img/about5.jpg','img/about5-hover.png','Разработчики электроники')._small
+      +mainCardHover('img/category2.jpg','img/category2-hover.png','Закупщики электронных компонентов')._small
+      +mainCardHover('img/category1.jpg','img/category1-hover.png','Закупщики печатных плат')._small
+      +mainCardHover('img/category4.jpg','img/category4-hover.png','Закупщики оборудования')._small
+    +e.desc
+      h2.section-title Аудитория платформы
+      +e.P.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non posuere lorem arcu. Quam amet suscipit integer ac purus. Tincidunt morbi sed platea aliquet volutpat accumsan id proin. Ut.
+      +e.info
+        +e.info-icon
+          |<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="28" height="28" viewBox="0 0 29 29"><path fill="#4BDD8E" d="M25 6.8h-4.6V4.4c0-1-.4-1.8-1-2.5-.7-.6-1.5-1-2.5-1h-4.7c-1 0-1.9.4-2.5 1-.7.7-1 1.5-1 2.5v2.4H4a3.4 3.4 0 00-3.5 3.5v15.1c0 1 .4 1.8 1 2.5.7.7 1.5 1 2.5 1h21c1 0 1.8-.3 2.5-1s1-1.5 1-2.5V10.3c0-1-.3-1.9-1-2.5-.7-.7-1.5-1-2.5-1zM11 4.4c0-.7.4-1.1 1.2-1.1h4.7c.7 0 1.1.4 1.1 1.1v2.4h-7V4.4zM4 26.6c-.8 0-1.1-.4-1.1-1.2V10.3C2.9 9.5 3.2 9 4 9h1.2v17.5H4zm3.5 0V9h14v17.5h-14zm18.7-1.2c0 .8-.4 1.2-1.2 1.2H24V9H25c.8 0 1.2.4 1.2 1.2v15.1z"/></svg> 
+          | 100
+        +e.info-text Количество зарегистрированных поставщиков начиная с сентября 2019 года
+  
+  +b.SECTION.market.wrapper
+    +e.slider
+      +e.desc
+        h2.section-title Рынок электроники
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat mauris hendrerit aliquam amet ornare. Et mus augue velit sem mattis nisl semper vitae.
+      +e.container
+        .swiper-wrapper
+          +e.item.swiper-slide
+            +e.title > 2000
+            +e.text организаций, ориентированных на коммерческие рынки
+          +e.item.swiper-slide
+            +e.title ≈ 1108
+            +e.text млрд руб. совокупная выручка
+          +e.item.swiper-slide
+            +e.title ≈ 30
+            +e.text дочерних научно производственных организаций иностранных компаний
+          +e.item.swiper-slide
+            +e.title 7,8%
+            +e.text ежегодный темп роста рынка
+          +e.item.swiper-slide
+            +e.title 426
+            +e.text организаций отрасли подотчетны Минпромторгу России
+          +e.item.swiper-slide
+            +e.title 55,9%
+            +e.text организаций располагается в ЦФО
+          +e.item.swiper-slide
+            +e.title 27,3%
+            +e.text доля продукции, предоставляемой на экспорт
+          +e.item.swiper-slide
+            +e.title 45
+            +e.text лет средний возраст работников отрасли
+          +e.item.swiper-slide
+            +e.title 289,5
+            +e.text тыс. чел. численность сотрудников
+        +e.btns
+          .btn-prev &#10229;
+          .btn-next &#10230;
+  
+  +b.SECTION.pluses.wrapper
+    h2.section-title Преимущества
+    +e.container
+      +e.item
+        +e.P.title Разработка электроники
+        +e.P.text Разработанный функционал позволяет значительно экономить время при поиске поставщиков и оценке проектов на платформе.
+      +e.item
+        +e.P.title Прозрачные и честные торги
+        +e.P.text Поставщики видят предложения конкурентов. Принцип честной конкуренции мотивирует постоянно улучшаться и развиваться.
+      +e.item
+        +e.P.title Реальные рейтинги и отзывы
+        +e.P.text Все рейтинги и отзывы на платформе реальные. Заказчики размещают отзывы исключительно по завершению проекта поставщика.
+      +e.item
+        +e.P.title Подлинность пользователей
+        +e.P.text Регистрация на платформе только для юр.лиц. Для прохождения модерации, необходимо будет подтвердить свое причастие к компании.
+ 
+  +b.SECTION.work.wrapper
+    h2.section-title Как это работает?
+    +e.slider
+      .swiper-wrapper
+        +e.slide.swiper-slide
+          +e.desc
+            +e.P.num 1
+            +e.P.title Создать конкурс
+            +e.P.text На создание конкурса уйдет 5 минут, проект моментально станет доступен множеству поставщиков. Никаких ЭЦП и сложных процедур. Вам это понравится.
+          +e.IMG.photo(src='img/work1.png ' alt='')
+        +e.slide.swiper-slide
+          +e.desc
+            +e.P.num 2
+            +e.P.title Ожидайте предложения
+            +e.P.text Поставщики видят цены, сроки друг друга и постоянно конкурируют за Ваш проект. Просто наблюдайте за процессом и ожидайте окончание торгов.
+          +e.IMG.photo(src='img/work2.png ' alt='')
+        +e.slide.swiper-slide
+          +e.desc
+            +e.P.num 3
+            +e.P.title Проводите переговоры
+            +e.P.text Проводите переговоры через онлайн чат с теми, кто Вас заинтересовал. Не отвлекайтесь больше на звонки и письма от поставщиков.
+          +e.IMG.photo(src='img/work3.png ' alt='')
+        +e.slide.swiper-slide
+          +e.desc
+            +e.P.num 4
+            +e.P.title Выбирайте победителя
+            +e.P.text Выбирайте поставщиков не в слепую, а основываясь на реальных отзывах и рейтингах, которые были оставлены заказчиками по завершению проектов.
+          +e.IMG.photo(src='img/work4.png ' alt='')
+      .swiper-pagination
+  
+  +b.SECTION.team.wrapper
+    h2.section-title Наша команда
+    +e.container
+      .swiper-wrapper
+        +e.item.swiper-slide
+          +e.IMG.photo(src='img/team1.png' alt='')
+          +e.P.position Основатель
+          +e.P.name Никита Шуков
+        +e.item.swiper-slide
+          +e.IMG.photo(src='img/team2.png' alt='')
+          +e.P.position Со-учредитель
+          +e.P.name Алексей Ерошенко
+        +e.item.swiper-slide
+          +e.IMG.photo(src='img/team3.png' alt='')
+          +e.P.position Директор по развитию
+          +e.P.name Евгений Пухов
+        +e.item.swiper-slide
+          +e.IMG.photo(src='img/team4.png' alt='')
+          +e.P.position Персональный менеджер
+          +e.P.name Вилена Юлгильдина
+  
+  +b.SECTION.signup.wrapper
+    h2.section-title Хотите зарабатывать больше?
+    +e.H3.subtitle Создайте аккаунт бесплатно уже сегодня
+    a.btn(href='#')
+      span.btn__text Зарегистрироваться
+    +e.container
+      +e.step
+        +e.num
+          span 1
+        +e.text Проходите короткую регистрацию 
+      +e.step
+        +e.num
+          span 2
+        +e.text Заполняете данные в личном кабинете
+      +e.step
+        +e.num
+          span 3
+        +e.text Мы подтверждаем статус вашей компании
+      +e.step
+        +e.num
+          span 4
+        +e.text Открываем доступ к размещению конкурсов и предложений

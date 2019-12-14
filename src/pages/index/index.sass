@@ -305,7 +305,7 @@
   +tablet(max)
     width: 100%
   +mobile
-    padding: 26px 30px 80px
+    padding: 26px 20px 80px
     
   &__status
     color: $colorMain
@@ -333,6 +333,8 @@
     bottom: 0
     box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
     background: #E7E6E6
+    +mobile
+      padding: 18px 20px
 
 //---------------__provider__-----------------//
 
@@ -366,8 +368,9 @@
   &__btn
     position: relative
     display: block
+    max-width: max-content
     z-index: 1
-    width: 222px
+    text-align: center
     padding-bottom: 4px
     margin: 0 auto
     transition: .3s
@@ -583,16 +586,16 @@
   &__slider
     position: relative
   &__container
-    // position: relative
     z-index: 1
-    // padding: 0 62px
     max-width: 980px
     margin: 0 auto
     +tablet(min)
       overflow: hidden
-    +tablet(max)
+    +tablet
+      max-width: 400px
+    +mobile
       margin: 0
-      width: 313px
+      padding-right: 54px
       
   &__list
     min-height: 350px
@@ -601,8 +604,6 @@
 
   &__item
     display: block
-    // max-width: 313px
-    // min-width: 294px
     height: 118px
     overflow: hidden
     background: #fff
