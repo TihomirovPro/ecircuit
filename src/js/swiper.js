@@ -1,21 +1,16 @@
 import Swiper from 'swiper/js/swiper'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const workSlider = new Swiper('.work__container', {
+  const whatUseful = new Swiper('.whatUseful__container', {
     loop: false,
     slidesPerView: 1,
-    spaceBetween: 24,
+    spaceBetween: 30,
     breakpoints: {
-      1150: {
-        slidesPerView: 4,
-        spaceBetween: 34
-      },
-      991: {
+      1024: {
         slidesPerView: 3
       },
       767: {
-        slidesPerView: 2,
-        spaceBetween: 24
+        slidesPerView: 2
       }
     }
   })

@@ -107,58 +107,265 @@
 
 //---------------__work__-----------------//
 
-.work
-  position: relative
-  z-index: 1
-  padding-bottom: 116px
-  +mobile
-    padding-bottom: 80px
-  &__container
-    +flex('between-wrap')
-    margin-bottom: 42px
-    +media(max, 1150px)
-      width: 800px
-    +tablet
-      width: 534px
-    +mobile
-      width: 230px
-  &__info
-    text-align: center
-    font-size: 20px
-    a 
-      color: $colorMain
+.btn_big
+  max-width: 230px
+  text-transform: uppercase
+  &.center
+    display: block
+    margin: 0 auto
+  +tablet(max)
+    display: block
+    margin: 0 auto
 
-.workCard
-  padding: 34px 26px
-  height: auto
-  background: #fff
-  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
-  border-radius: 6px
-  +media(max, 1150px)
-    padding: 34px 16px
-  &__num
-    +flex('center')
-    +size(53px)
-    font-size: 20px
-    font-weight: 600
-    border-radius: 50%
-    color: #fff
-    margin: 0 auto 26px
-    background: linear-gradient(136.42deg, rgba(11, 200, 166, 0.39) 0%, rgba(76, 221, 116, 0.41) 96.35%), #fff
-    box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+.work
+  padding-bottom: 150px
+  +tablet(max)
+    padding-bottom: 80px
+
+  .section-title
+    margin-bottom: 100px
+
+  &__nav
+    +flex('between')
+    padding-bottom: 24px
+    border-bottom: 1px solid rgba(76, 221, 116, 0.41)
+
+  &__link
+    width: 50%
+    font-weight: 800
+    font-size: 24px
+    text-align: center
+    +mobile(min)
+      color: #3A3A3A
+    +mobile
+      font-size: 18px
+      &.active
+        color: #3A3A3A
+
+  &__card
+    padding: 26px
+    background: #FFFFFF
+    box-shadow: 0px 4px 25px rgba(164, 164, 164, 0.25)
+    border-radius: 9px
+    +mobile(min)
+      &:not(:last-child)
+        margin-bottom: 30px
+     
+
   &__title
-    position: relative
-    font-size: 16px
     font-weight: bold
-    text-align: center
-    margin-bottom: 22px
-    padding-bottom: 10px
-    +before(90px,1px,$colorMain)
-      bottom: 0
-      left: 50%
-      transform: translateX(-50%)
+    font-size: 18px
+    margin-bottom: 6px
+    color: #3A3A3A
+
   &__text
+    font-size: 16px
+
+  &__tabs
+    padding-top: 60px
+    position: relative
+    +flex('between-wrap')
+    margin-bottom: 40px
+    +mobile
+      padding-top: 0
+    +before(1px,(calc(100% + 75px)),(rgba(76, 221, 116, 0.41)))
+      left: calc(50% - .5px)
+      top: -75px
+
+  &__tab
+    position: relative
+    width: calc(100%/3 - 15px)
+    padding-bottom: 45px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    +tablet
+      width: calc(40% - 6px)
+    +mobile
+      padding-bottom: 0
+      width: 100%
+    &:nth-child(2)
+      +tablet
+        width: calc(20% - 6px)
+      +mobile
+        display: none
+      .signup__num
+        display: block
+    .signup__num
+      display: none
+      position: relative
+      width: auto
+      background: none
+      +mobile(min)
+        +before(100%,1px,(rgba(76, 221, 116, 0.41)))
+          left: 100%
+        +after(100%,1px,(rgba(76, 221, 116, 0.41)))
+          right: 100%
+        &:before,
+        &:after
+          top: calc((100% - 30px)/2 - .5px)
+      +mobile
+        display: block
+        +size(70px)
+        margin: 26px auto
+      span
+        +size(90px)
+        margin: 0 15px 30px
+        +tablet(max)
+          +size(70px)
+          margin: 0 6px 30px
+        +mobile
+          margin: 0
+
+.tab-js
+  +mobile
+    display: none
+    &.active
+      display: block
+
+//---------------__for__-----------------//
+.forWhom
+  padding-bottom: 150px
+  +tablet(max)
+    padding-bottom: 80px
+
+  &__container
+    display: grid
+    grid-template-columns: 1fr 1fr
+    column-gap: 38px
+
+    +tablet(max)
+      grid-template-columns: 1fr
+      row-gap: 30px
+
+  &__card
+    display: grid
+    grid-template-columns: auto auto
+    align-items: center
+    column-gap: 30px
+    padding: 40px 36px
+    background: #fff
+    border-radius: 7px
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.11)
+
+    img
+      width: 100%
+
+    +tablet(max)
+      grid-template-columns: 30% auto
+      padding: 20px 10px
+      column-gap: 10px
+
+  &__card-title
+    font-weight: bold
+    font-size: 20px
+    line-height: 24px
+    color: #818080
+    margin-bottom: 20px
+    max-width: 190px
+    +mobile
+      font-size: 16px
+      margin-bottom: 10px
+      line-height: 19px
+
+  &__card-text
+    +mobile
+      font-size: 14px
+//---------------whatUseful-----------------//
+.whatUseful
+  padding-bottom: 150px
+  +tablet(max)
+    padding-bottom: 80px
+
+  &__container
+    height: 265px
+    +tablet(max)
+      width: 80%
+    +mobile
+      height: 240px
+
+  &__card
     text-align: center
+    padding: 40px
+    background: #fff
+    border-radius: 7px
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.11)
+    +tablet(max)
+      padding: 20px
+
+    img
+      margin-bottom: 20px
+
+  &__card-title
+    font-weight: bold
+    font-size: 20px
+    line-height: 24px
+    color: #818080
+    margin-bottom: 16px
+    +mobile
+      font-size: 16px
+      margin-bottom: 10px
+      line-height: 19px
+
+  &__card-text
+    +mobile
+      font-size: 14px
+  
+//---------------__work__-----------------//
+
+// .work
+//   position: relative
+//   z-index: 1
+//   padding-bottom: 116px
+//   +mobile
+//     padding-bottom: 80px
+//   &__container
+//     +flex('between-wrap')
+//     margin-bottom: 42px
+//     +media(max, 1150px)
+//       width: 800px
+//     +tablet
+//       width: 534px
+//     +mobile
+//       width: 230px
+//   &__info
+//     text-align: center
+//     font-size: 20px
+//     a 
+//       color: $colorMain
+
+// .workCard
+//   padding: 34px 26px
+//   height: auto
+//   background: #fff
+//   box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+//   border-radius: 6px
+//   +media(max, 1150px)
+//     padding: 34px 16px
+//   &__num
+//     +flex('center')
+//     +size(53px)
+//     font-size: 20px
+//     font-weight: 600
+//     border-radius: 50%
+//     color: #fff
+//     margin: 0 auto 26px
+//     background: linear-gradient(136.42deg, rgba(11, 200, 166, 0.39) 0%, rgba(76, 221, 116, 0.41) 96.35%), #fff
+//     box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+//   &__title
+//     position: relative
+//     font-size: 16px
+//     font-weight: bold
+//     text-align: center
+//     margin-bottom: 22px
+//     padding-bottom: 10px
+//     +before(90px,1px,$colorMain)
+//       bottom: 0
+//       left: 50%
+//       transform: translateX(-50%)
+//   &__text
+//     text-align: center
 
 //---------------__category__-----------------//
 
@@ -335,115 +542,6 @@
     background: #E7E6E6
     +mobile
       padding: 18px 20px
-
-//---------------__provider__-----------------//
-
-.provider
-  position: relative
-  padding-bottom: 115px
-  &::before
-    position: absolute
-    content: ''
-    background: url(../img/providerBg.svg)
-    background-size: 100% 100%
-    background-repeat: no-repeat
-    background-position-x: center
-    +size(100%,660px)
-    left: 50%
-    transform: translateX(-50%)
-    top: -70px
-  &__container
-    position: relative
-    z-index: 1
-    overflow: hidden
-    height: 360px
-    margin: 0 auto 86px
-  &__btn-icon
-    width: 12px
-    height: 9px
-    margin-left: 10px
-    vertical-align: middle
-    >path
-      fill: $colorText
-  &__btn
-    position: relative
-    display: block
-    max-width: max-content
-    z-index: 1
-    text-align: center
-    padding-bottom: 4px
-    margin: 0 auto
-    transition: .3s
-    border-bottom: 1px solid transparent
-    &:hover
-      color: $colorMain
-      border-bottom: 1px solid $colorMain
-      .provider__btn-icon
-        >path
-          fill: $colorMain
-
-
-.bubbles
-  width: 2060px
-  margin: 0 auto
-  position: relative
-
-.bubble
-  position: absolute
-  width: 143px
-  height: 143px
-  border-radius: 50%
-  background-color: #fff
-  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
-  background-size: 80%
-  background-repeat: no-repeat
-  background-position: center
-
-.logo1
-  background-image: url(../img/a-contract.webp)
-.logo2
-  background-image: url(../img/altmaster.webp)
-.logo3
-  background-image: url(../img/asklab.webp)
-.logo4
-  background-image: url(../img/chipdip.webp)
-.logo5
-  background-image: url(../img/city.webp)
-.logo6
-  background-image: url(../img/enforsys.webp)
-.logo7
-  background-image: url(../img/eltex.webp)
-.logo8
-  background-image: url(../img/ericon.webp)
-.logo9
-  background-image: url(../img/ezan.webp)
-.logo10
-  background-image: url(../img/fineline.webp)
-.logo11
-  background-image: url(../img/goodwin.webp)
-
-.logo12
-  background-image: url(../img/gsgroup.webp)
-.logo13
-  background-image: url(../img/logo.webp)
-.logo14
-  background-image: url(../img/makro.webp)
-.logo15
-  background-image: url(../img/nek.webp)
-.logo16
-  background-image: url(../img/ncab.webp)
-.logo17
-  background-image: url(../img/mosobl.webp)
-.logo18
-  background-image: url(../img/pacific.webp)
-.logo19
-  background-image: url(../img/pcb.webp)
-.logo20
-  background-image: url(../img/redhead.webp)
-.logo21
-  background-image: url(../img/smartdive.webp)
-.logo22
-  background-image: url(../img/symanitron.webp)
 
 //---------------__accaunt__-----------------//
 
@@ -648,6 +746,74 @@
 .prev-btn
   left: auto
   right: 0
+
+//---------------__signup__-----------------//
+
+.signup
+  padding-bottom: 150px
+  &__subtitle
+    font-size: 18px
+    line-height: 22px
+    text-align: center
+    margin-bottom: 30px
+
+  .section-title
+    +mobile
+      text-align: center
+
+  .btn
+    display: block
+    width: 195px
+    height: 55px
+    text-align: center
+    margin: 0 auto
+
+  &__container
+    position: relative
+    padding-top: 90px
+    +flex('between')
+    +before(80%,2px,(rgba(11, 200, 166, 0.39)))
+      top: 123px
+      left: 50%
+      transform: translateX(-50%)
+      +mobile
+          width: 60%
+    +mobile
+      flex-wrap: wrap
+      &::before
+        display: none
+      
+  &__step
+    position: relative
+    z-index: 1
+    width: 190px
+    +mobile
+      width: 50%
+      margin-bottom: 40px
+
+
+  &__num
+    width: 100px
+    margin: 0 auto
+    background: #f9f9f9
+    span
+      display: block
+      +size(67px)
+      +flex('center')
+      margin: 0 auto 12px
+
+      color: #fff
+      font-size: 20px
+      font-weight: bold
+      text-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+
+      border-radius: 50%
+      background: linear-gradient(136.42deg, rgba(11, 200, 166, 0.39) 0%, rgba(76, 221, 116, 0.41) 96.35%), #FFFFFF
+      box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+
+  &__text
+    text-align: center
+    font-size: 14px
     
 
 @import "./*/*"

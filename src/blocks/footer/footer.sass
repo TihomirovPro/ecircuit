@@ -31,6 +31,10 @@
     +flex('between')
     padding-top: 24px
     padding-bottom: 40px
+
+    .footer__wrap
+      display: flex
+      margin-left: auto
   
   &__list
     +mobile
@@ -56,6 +60,7 @@
     transition: .3s
     max-width: 190px
     margin-bottom: 6px
+    white-space: nowrap
     &:hover
       color: $colorMain
 
@@ -73,10 +78,12 @@
       .footer__icon
         >path
           fill: $colorMain
-  // &__policy
-  //   +tablet(max)
-  //     display: none
+  &__policy
+    margin-left: 50px
+    +tablet(max)
+      display: none
   &__social
+    margin-left: 100px
     +tablet(max)
       position: absolute
       top: 110px

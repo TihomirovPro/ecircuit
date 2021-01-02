@@ -38,7 +38,7 @@
   text-align: center
 
 .section-title
-  font-size: 28px
+  font-size: 35px
   margin-bottom: 42px
   font-weight: bold
   text-align: center
@@ -47,6 +47,9 @@
   z-index: 1
   +tablet(max)
     text-align: left
+  +mobile
+    font-size: 28px
+    text-align: center
 
 //---------------__form__-----------------//
 
@@ -116,3 +119,112 @@
   color: red
   display: block
   margin-top: 6px
+
+//---------------__provider__-----------------//
+
+.provider
+  position: relative
+  padding-bottom: 115px
+  &::before
+    position: absolute
+    content: ''
+    background: url(../img/providerBg.svg)
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    background-position-x: center
+    +size(100%,660px)
+    left: 50%
+    transform: translateX(-50%)
+    top: -70px
+  &__container
+    position: relative
+    z-index: 1
+    overflow: hidden
+    height: 360px
+    margin: 0 auto 86px
+  &__btn-icon
+    width: 12px
+    height: 9px
+    margin-left: 10px
+    vertical-align: middle
+    >path
+      fill: $colorText
+  &__btn
+    position: relative
+    display: block
+    max-width: max-content
+    z-index: 1
+    text-align: center
+    padding-bottom: 4px
+    margin: 0 auto
+    transition: .3s
+    border-bottom: 1px solid transparent
+    &:hover
+      color: $colorMain
+      border-bottom: 1px solid $colorMain
+      .provider__btn-icon
+        >path
+          fill: $colorMain
+
+
+.bubbles
+  width: 2060px
+  margin: 0 auto
+  position: relative
+
+.bubble
+  position: absolute
+  width: 143px
+  height: 143px
+  border-radius: 50%
+  background-color: #fff
+  box-shadow: 0px 4px 25px rgba(198, 198, 198, 0.25)
+  background-size: 80%
+  background-repeat: no-repeat
+  background-position: center
+
+.logo1
+  background-image: url(../img/1.png)
+.logo2
+  background-image: url(../img/2.png)
+.logo3
+  background-image: url(../img/3.jpg)
+.logo4
+  background-image: url(../img/4.jpg)
+.logo5
+  background-image: url(../img/5.jpg)
+.logo6
+  background-image: url(../img/6.png)
+.logo7
+  background-image: url(../img/7.jpg)
+.logo8
+  background-image: url(../img/8.png)
+.logo9
+  background-image: url(../img/9.png)
+.logo10
+  background-image: url(../img/10.jpg)
+.logo11
+  background-image: url(../img/11.jpg)
+
+.logo12
+  background-image: url(../img/12.png)
+.logo13
+  background-image: url(../img/13.png)
+.logo14
+  background-image: url(../img/14.png)
+.logo15
+  background-image: url(../img/15.png)
+.logo16
+  background-image: url(../img/16.png)
+.logo17
+  background-image: url(../img/17.jpg)
+.logo18
+  background-image: url(../img/18.jpg)
+.logo19
+  background-image: url(../img/19.png)
+.logo20
+  background-image: url(../img/20.png)
+.logo21
+  background-image: url(../img/fineline.webp)
+.logo22
+  background-image: url(../img/ncab.webp)
