@@ -27,9 +27,9 @@
     background-size: contain
     background-repeat: no-repeat
     background-position-x: right
-    min-width: 1300px
-    height: 638px
-    top: 54px
+    min-width: 1200px
+    height: 350px
+    top: 25%
     left: 0
     +tablet(max)
       display: none
@@ -44,7 +44,7 @@
 
   &__subtitle
     margin-bottom: 36px
-    font-size: 16px
+    font-size: 20px
     max-width: 456px
     +tablet(max)
       margin: 0 auto 30px
@@ -85,6 +85,20 @@
     +mobile
       display: none
 
+  &__logos
+    max-width: 214px
+    margin-top: 25px
+    display: grid
+    column-gap: 10px
+    grid-template-columns: repeat(4, 1fr)
+    align-items: center
+    +tablet(max)
+      margin: auto
+      margin-top: 20px
+  &__logo-wrap
+    img
+      max-width: 100%
+
 +media(min,1601px)
   .page-title
     font-size: 55px
@@ -92,13 +106,16 @@
   
   .main
     min-height: 100vh
-    &::before
-      height: 800px
-      width: 1460px
-    &__container
-      max-width: 640px
+
++media(min,991px)
+  .main
     &__subtitle
-      font-size: 20px
+      max-width: 640px
+      line-height: 120%
+    &__title
+      font-size: 70px
+      margin-bottom: 30px
+    &__container
       max-width: 640px
 
 @media only screen and (min-height: 1081px)
